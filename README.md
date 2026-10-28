@@ -13,7 +13,9 @@ subdivisions you want to learn and export a deck with embedded maps. Cards show
 the country and subdivision on the front, and a highlighted map on the back.
 
 > [!IMPORTANT]
-> 🇮🇩 **Currently, only Indonesia is implemented. More countries are planned.**
+> **Currently, only Indonesia's kabupaten (regencies) and kota (cities) are
+> implemented.** These are second-level administrative divisions, below provinces.
+> More countries are planned.
 
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
@@ -32,7 +34,7 @@ uv sync --locked
 Generate a deck using the example Indonesia selection:
 
 ```bash
-uv run GeoAnki \
+uv run geo_anki \
   --country indonesia \
   --targets examples/indonesia.txt \
   --output outputs/indonesia.apkg
@@ -53,7 +55,7 @@ Copy or replace the target file to choose your own subdivisions.
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
-maps, and a JSON manifest. Run `uv run GeoAnki --help` for additional options.
+maps, and a JSON manifest. Run `uv run geo_anki --help` for additional options.
 
 ## 📍 Data sources
 

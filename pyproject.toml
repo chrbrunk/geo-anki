@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-GeoAnki = "geo_anki.scripts.run:main"
+geo_anki = "geo_anki.scripts.run:main"
 
 [dependency-groups]
 dev = [
