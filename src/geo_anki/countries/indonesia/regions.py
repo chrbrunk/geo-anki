@@ -11,6 +11,45 @@ class Region:
 
 REGIONS = (
     Region(
+        "Java",
+        (
+            "Banten",
+            "DKI Jakarta",
+            "Jawa Barat",
+            "Jawa Tengah",
+            "Daerah Istimewa Yogyakarta",
+            "Jawa Timur",
+        ),
+        (
+            ("Jakarta", 106.8456, -6.2088, 5, 8),
+            ("Bandung", 107.6191, -6.9175, 5, -12),
+            ("Semarang", 110.4203, -6.9667, 5, 8),
+            ("Yogyakarta", 110.3695, -7.7956, -65, -12),
+            ("Surakarta", 110.8167, -7.5667, 5, -12),
+            ("Surabaya", 112.7508, -7.2575, 5, 8),
+            ("Malang", 112.6304, -7.9666, 5, -12),
+        ),
+    ),
+    Region(
+        "Sulawesi",
+        (
+            "Sulawesi Utara",
+            "Gorontalo",
+            "Sulawesi Tengah",
+            "Sulawesi Barat",
+            "Sulawesi Selatan",
+            "Sulawesi Tenggara",
+        ),
+        (
+            ("Manado", 124.8455, 1.4748, 5, 8),
+            ("Gorontalo", 123.0595, 0.5435, 5, -12),
+            ("Palu", 119.8707, -0.8917, -25, 8),
+            ("Mamuju", 118.9009, -2.6797, -48, 5),
+            ("Makassar", 119.4327, -5.1477, -55, -12),
+            ("Kendari", 122.5120, -3.9985, 5, 5),
+        ),
+    ),
+    Region(
         "Kalimantan",
         (
             "Kalimantan Barat",

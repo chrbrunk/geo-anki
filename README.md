@@ -30,8 +30,10 @@ into Anki. The front shows `Indonesia: <name>`; the back shows the province and 
 Stable note IDs support updates when importing later batches. Keep the deck name
 unchanged to keep adding to the same deck.
 
-Kalimantan and Sumatra have island-wide contexts, province outlines, and reference
-cities. Kalimantan covers the Indonesian portion of Borneo. Sumatra includes Bangka
+Java, Sulawesi, Kalimantan, and Sumatra have island-wide contexts, province outlines,
+and reference cities. Java includes Madura and the other islands belonging to its
+six provinces. Sulawesi includes the islands belonging to its six provinces.
+Kalimantan covers the Indonesian portion of Borneo. Sumatra includes Bangka
 Belitung and excludes Kepulauan Riau. Other provinces currently use province-wide
 framing without configured reference cities. Configure contexts and cities in
 `countries/indonesia/regions.py`.
