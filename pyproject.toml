@@ -16,6 +16,9 @@ dependencies = [
     "matplotlib>=3.11.2",
 ]
 
+[project.scripts]
+GeoAnki = "geo_anki.scripts.run:main"
+
 [dependency-groups]
 dev = [
     "pre-commit>=4.7.0",
