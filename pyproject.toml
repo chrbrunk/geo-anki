@@ -10,7 +10,11 @@ readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
 license-files = ["LICENSE"]
-dependencies = []
+dependencies = [
+    "genanki>=0.13.1",
+    "geopandas>=1.2.0",
+    "matplotlib>=3.11.2",
+]
 
 [dependency-groups]
 dev = [
