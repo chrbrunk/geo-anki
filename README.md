@@ -21,6 +21,14 @@ the country and subdivision on the front, and a highlighted map on the back.
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
 
+## 🖼️ Example flashcard
+
+**Front:** `Indonesia: Muaro Jambi`
+
+**Back:** `Kabupaten Muaro Jambi — Jambi`
+
+<img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="600">
+
 ## 🚀 Setup
 
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
@@ -81,33 +89,3 @@ To run all configured checks across the repository manually:
 ```bash
 uv run pre-commit run --all-files
 ```
-
-GitHub Actions runs these checks and pytest with branch coverage on every push
-and pull request. Coverage and test reports are available as workflow artifacts.
-CI requires at least 90% combined statement and branch coverage.
-To run the same tests locally:
-
-```bash
-uv run pytest --cov=geo_anki --cov-branch --cov-report=term-missing
-```
-
-### Coverage badge setup
-
-The badge uses the configured
-[Gist](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f),
-updating `pytest-coverage-comment.json`. Add a classic personal access token owned
-by the Gist owner with the `gist` scope as the repository Actions secret
-`GIST_ACCESS_TOKEN` under **Settings → Secrets and variables → Actions**.
-
-Badge publishing is skipped until the token is present, and runs only after a
-successful push build on `main`.
-
-The Gist can contain multiple files: the badge reads only
-`pytest-coverage-comment.json`, which CI creates or updates automatically. Keep
-that filename unchanged; an original placeholder file can be deleted in the Gist
-editor. Click the coverage badge to inspect its source file. If it is missing or
-empty, check the workflow's **Update coverage badge** step for an error or skip.
-
-Shields may cache badge responses for a few minutes after CI updates the file.
-Inspect test and linter runs directly in
-[GitHub Actions](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml).
