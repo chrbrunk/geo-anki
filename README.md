@@ -5,8 +5,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-FAB040?logo=pre-commit&logoColor=black)](https://pre-commit.com/)
 [![pytest](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Ruff](https://img.shields.io/badge/linting-Ruff-D7FF64?logo=ruff&logoColor=black)](https://docs.astral.sh/ruff/)
-[![Tests and linters](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml/badge.svg?branch=main&event=push)](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml)
-[![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fchrbrunk%2Fed1d7568fa8ea07f78781ddf965f603f%2Fraw%2Fpytest-coverage-comment.json)](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f#file-pytest-coverage-comment-json)
+[![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.github.com%2Fchrbrunk%2Fed1d7568fa8ea07f78781ddf965f603f%2Fraw%2Fpytest-coverage-comment.json&cacheSeconds=300)](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f#file-pytest-coverage-comment-json)
 
 ## 🗺️ Overview
 
@@ -108,7 +107,6 @@ that filename unchanged; an original placeholder file can be deleted in the Gist
 editor. Click the coverage badge to inspect its source file. If it is missing or
 empty, check the workflow's **Update coverage badge** step for an error or skip.
 
-The **Tests and linters** badge shows push runs on `main`. GitHub's native workflow
-badges for private repositories are not accessible externally. View the README
-while signed in with repository access, or follow the badge link to Actions to
-inspect the actual run status.
+Shields may cache badge responses for a few minutes after CI updates the file.
+Inspect test and linter runs directly in
+[GitHub Actions](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml).
