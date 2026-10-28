@@ -1,15 +1,19 @@
 import io
 import json
 import sqlite3
+from unittest.mock import patch
 from zipfile import ZipFile
 
 import geopandas as gpd
 import pytest
+from matplotlib.axes import Axes
 from PIL import Image
 from shapely.geometry import box
 
 from geo_anki.countries.indonesia import data
+from geo_anki.countries.indonesia.regions import Region, region_for
 from geo_anki.scripts.run import build_indonesia
+from geo_anki.utils.anki import write_deck
 
 
 @pytest.fixture
@@ -139,16 +143,22 @@ def test_map_and_deck(tmp_path, dataset, monkeypatch):
         None. Asserts generated files contain the expected cards and images.
     """
     # Use a small province context so this fixture need not mimic all of Sumatra.
-    from geo_anki.countries.indonesia.regions import Region
-
     monkeypatch.setattr(
         "geo_anki.scripts.run.region_for",
-        lambda province: Region(province, (province,)),
+        lambda province: Region(
+            province, (province,), (("Jambi", 103.6131, -1.6101, 5, 5),)
+        ),
     )
     targets = tmp_path / "targets.txt"
     targets.write_text("# My selections\nMuaro Jambi\n\nKota Jambi\n")
     output = tmp_path / "deck.apkg"
-    images = build_indonesia(targets, output, dataset, "Test deck")
+    with patch.object(
+        Axes, "set_title", autospec=True, side_effect=Axes.set_title
+    ) as title:
+        images = build_indonesia(targets, output, dataset, "Test deck")
+    titles = [call.args[1] for call in title.call_args_list]
+    assert "Muaro Jambi\nJambi · Jambi" in titles
+    assert all("Indonesia" not in text for text in titles)
     assert len(images) == 2
     with Image.open(images[0]) as image:
         assert image.width > 500 and image.height > 500
@@ -165,8 +175,95 @@ def test_map_and_deck(tmp_path, dataset, monkeypatch):
         notes = connection.execute("SELECT guid, flds FROM notes").fetchall()
         assert len(notes) == 2
         assert len({note[0] for note in notes}) == 2
-        assert "Indonesia: Muaro Jambi" in notes[0][1]
-        assert "Jambi, Indonesia" in notes[0][1]
+        fields = notes[0][1].split("\x1f")
+        assert fields[0] == "Indonesia: Muaro Jambi"
+        assert fields[1] == "Kabupaten Muaro Jambi — Jambi"
+        assert all("Indonesia" not in note[1].split("\x1f")[1] for note in notes)
         assert connection.execute("SELECT count(*) FROM cards").fetchone()[0] == 2
     manifest = json.loads(output.with_suffix(".json").read_text())
     assert manifest["cards"][0]["province"] == "Jambi"
+
+
+def test_region_selection():
+    """Verify island contexts and the province-only fallback.
+
+    Returns:
+        None. Asserts framing choices and shared extents within each island.
+    """
+    for province, neighbor, island in (
+        ("Jawa Barat", "Jawa Timur", "Java"),
+        ("Sulawesi Selatan", "Gorontalo", "Sulawesi"),
+        ("Kalimantan Timur", "Kalimantan Barat", "Kalimantan"),
+        ("Jambi", "Aceh", "Sumatra"),
+    ):
+        region = region_for(province)
+        assert region.name == island
+        assert {province, neighbor}.issubset(region.provinces)
+        assert region_for(neighbor) == region
+        assert region.cities
+    assert region_for("Bali") == Region("Bali", ("Bali",))
+
+
+@pytest.mark.parametrize(
+    "field,value,message",
+    [
+        ("WADMKK", None, "Missing names"),
+        ("WADMPR", "Unknown province", "unknown province"),
+    ],
+)
+def test_invalid_boundary_data(dataset, field, value, message):
+    """Reject missing subdivision names and unknown parent provinces.
+
+    Args:
+        dataset: Boundary ZIP fixture to modify.
+        field: Subdivision property to replace.
+        value: Invalid property value.
+        message: Expected error-message pattern.
+
+    Returns:
+        None. Asserts invalid data raises ValueError.
+    """
+    with ZipFile(dataset) as archive:
+        layers = {name: archive.read(name) for name in archive.namelist()}
+    name = "data/indonesia_kabupaten.geojson"
+    layer = json.loads(layers[name])
+    layer["features"][0]["properties"][field] = value
+    layers[name] = json.dumps(layer).encode()
+    with ZipFile(dataset, "w") as archive:
+        for name, content in layers.items():
+            archive.writestr(name, content)
+    with pytest.raises(ValueError, match=message):
+        data.load_data(dataset)
+
+
+def test_anki_ids_survive_reordered_batches(tmp_path):
+    """Verify later exports preserve note, model, and deck identities.
+
+    Args:
+        tmp_path: Pytest-provided temporary output directory.
+
+    Returns:
+        None. Asserts identities persist after reordering and editing card text.
+    """
+    image = tmp_path / "map.png"
+    Image.new("RGB", (2, 2)).save(image)
+    identities = []
+    for batch in (0, 1):
+        cards = [(key, key, f"Answer {batch}", image) for key in ("a", "b")]
+        if batch:
+            cards.reverse()
+        output = tmp_path / f"batch{batch}.apkg"
+        write_deck(cards, output, "Test deck")
+        with ZipFile(output) as archive:
+            database = tmp_path / f"batch{batch}.sqlite"
+            database.write_bytes(archive.read("collection.anki2"))
+        with sqlite3.connect(database) as connection:
+            notes = connection.execute("SELECT guid, mid, flds FROM notes").fetchall()
+            note_ids = {
+                fields.split("\x1f")[0]: (guid, mid) for guid, mid, fields in notes
+            }
+            deck_ids = connection.execute("SELECT DISTINCT did FROM cards").fetchall()
+            identities.append((note_ids, deck_ids))
+    assert len(identities[0][0]) == 2
+    assert len({guid for guid, _ in identities[0][0].values()}) == 2
+    assert identities[0] == identities[1]

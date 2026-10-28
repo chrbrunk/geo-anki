@@ -59,9 +59,7 @@ def build_indonesia(
             if normalize(name).startswith(("kota ", "kabupaten "))
             else f"Kabupaten {name}"
         )
-        cards.append(
-            (key, f"Indonesia: {name}", f"{full_name} — {province}, Indonesia", image)
-        )
+        cards.append((key, f"Indonesia: {name}", f"{full_name} — {province}", image))
         manifest.append(
             {
                 "name": name,

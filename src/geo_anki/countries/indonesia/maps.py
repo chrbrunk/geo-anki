@@ -82,9 +82,7 @@ def render_map(
     ax.set_ylim(ymin - padding, ymax + padding)
     ax.set_aspect("equal")
     ax.set_axis_off()
-    ax.set_title(
-        f"{target.iloc[0].WADMKK}\n{province} · {region.name}, Indonesia", fontsize=14
-    )
+    ax.set_title(f"{target.iloc[0].WADMKK}\n{province} · {region.name}", fontsize=14)
     ax.legend(
         handles=[
             Patch(facecolor="#f18d32", label="Target kabupaten/kota"),
