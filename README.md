@@ -5,6 +5,8 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-FAB040?logo=pre-commit&logoColor=black)](https://pre-commit.com/)
 [![pytest](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Ruff](https://img.shields.io/badge/linting-Ruff-D7FF64?logo=ruff&logoColor=black)](https://docs.astral.sh/ruff/)
+[![CI](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml/badge.svg)](https://github.com/chrbrunk/geo-anki/actions/workflows/ci.yaml)
+![Coverage](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f/raw/pytest-coverage-comment.json)
 
 ## 🗺️ Overview
 
@@ -80,3 +82,22 @@ To run all configured checks across the repository manually:
 ```bash
 uv run pre-commit run --all-files
 ```
+
+GitHub Actions runs these checks and pytest with branch coverage on every push
+and pull request. Coverage and test reports are available as workflow artifacts.
+To run the same tests locally:
+
+```bash
+uv run pytest --cov=geo_anki --cov-branch --cov-report=term-missing
+```
+
+### Coverage badge setup
+
+The badge uses the configured
+[Gist](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f),
+updating `pytest-coverage-comment.json`. Add a classic personal access token owned
+by the Gist owner with the `gist` scope as the repository Actions secret
+`BOT_ACCESS_TOKEN` under **Settings → Secrets and variables → Actions**.
+
+Badge publishing is skipped until the token is present, and runs only after a
+successful push build on `main`.

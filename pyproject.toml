@@ -23,6 +23,7 @@ geo_anki = "geo_anki.scripts.run:main"
 dev = [
     "pre-commit>=4.7.0",
     "pytest>=8,<10",
+    "pytest-cov>=7.1.0",
     "ruff>=0.14,<1",
     "ty>=0.0.94",
 ]

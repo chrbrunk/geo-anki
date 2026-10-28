@@ -1,0 +1,76 @@
+name: Tests and linters
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      COVERAGE_GIST_ID: ed1d7568fa8ea07f78781ddf965f603f
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run pre-commit checks
+        run: uv run pre-commit run --all-files
+
+      - name: Run tests with coverage
+        run: |
+          uv run pytest --verbose --cov=geo_anki --cov-branch \
+            --cov-report=xml:.cache/coverage/coverage.xml \
+            --cov-report=term-missing \
+            --junitxml=.cache/coverage/pytest.xml
+
+      - name: Coverage summary
+        id: coverage
+        uses: MishaKav/pytest-coverage-comment@287292879eaaff04116f36d3eb1a670f6e5df1a4 # v1.1.54
+        with:
+          pytest-xml-coverage-path: .cache/coverage/coverage.xml
+          junitxml-path: .cache/coverage/pytest.xml
+          hide-comment: true
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            .cache/coverage/coverage.xml
+            .cache/coverage/pytest.xml
+
+      - name: Check badge configuration
+        id: badge
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GIST_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
+        run: |
+          if [ -n "$GIST_TOKEN" ]; then
+            echo 'enabled=true' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update coverage badge
+        if: steps.badge.outputs.enabled == 'true'
+        uses: schneegans/dynamic-badges-action@e9a478b16159b4d31420099ba146cdc50f134483 # v1.7.0
+        with:
+          auth: ${{ secrets.BOT_ACCESS_TOKEN }}
+          gistID: ${{ env.COVERAGE_GIST_ID }}
+          filename: pytest-coverage-comment.json
+          label: Test Coverage
+          message: ${{ steps.coverage.outputs.coverage }}
+          color: ${{ steps.coverage.outputs.color }}
+          namedLogo: python
