@@ -97,7 +97,7 @@ The badge uses the configured
 [Gist](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f),
 updating `pytest-coverage-comment.json`. Add a classic personal access token owned
 by the Gist owner with the `gist` scope as the repository Actions secret
-`BOT_ACCESS_TOKEN` under **Settings → Secrets and variables → Actions**.
+`GIST_ACCESS_TOKEN` under **Settings → Secrets and variables → Actions**.
 
 Badge publishing is skipped until the token is present, and runs only after a
 successful push build on `main`.
