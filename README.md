@@ -5,7 +5,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-FAB040?logo=pre-commit&logoColor=black)](https://pre-commit.com/)
 [![pytest](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://docs.pytest.org/)
 [![Ruff](https://img.shields.io/badge/linting-Ruff-D7FF64?logo=ruff&logoColor=black)](https://docs.astral.sh/ruff/)
-[![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.github.com%2Fchrbrunk%2Fed1d7568fa8ea07f78781ddf965f603f%2Fraw%2Fpytest-coverage-comment.json&cacheSeconds=300)](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f#file-pytest-coverage-comment-json)
+[![Coverage](https://img.shields.io/endpoint?url=https%3A%2F%2Fgist.githubusercontent.com%2Fchrbrunk%2Fed1d7568fa8ea07f78781ddf965f603f%2Fraw%2Fpytest-coverage-comment.json%3Fv%3D2&label=Coverage&cacheSeconds=300)](https://gist.github.com/chrbrunk/ed1d7568fa8ea07f78781ddf965f603f#file-pytest-coverage-comment-json)
 
 ## 🗺️ Overview
 
