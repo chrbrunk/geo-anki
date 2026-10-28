@@ -32,14 +32,18 @@ Here, Jambi is the province, highlighted with a pale fill and bold outline.
 
 <img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="450">
 
-## 🚀 Setup
+## 🚀 Setup / Installation
 
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
-Run from the repository root:
+For now, clone the repository and install its dependencies with uv:
 
 ```bash
+git clone https://github.com/chrbrunk/geo-anki.git
+cd geo-anki
 uv sync --locked
 ```
+
+Installation from PyPI via `pip` will be added later.
 
 ## 🃏 Usage
 
