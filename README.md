@@ -28,7 +28,9 @@ the country and subdivision on the front, and a highlighted map on the back.
 
 **Back:** `Kabupaten Muaro Jambi — Jambi`
 
-<img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="600">
+Here, Jambi is the province, highlighted with a pale fill and bold outline.
+
+<img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="450">
 
 ## 🚀 Setup
 
