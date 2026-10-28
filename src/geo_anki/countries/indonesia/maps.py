@@ -15,6 +15,21 @@ def render_map(
     region: Region,
     output: Path,
 ) -> None:
+    """Save a regional map highlighting one subdivision and its province.
+
+    Args:
+        provinces: Province polygons with PROVINSI names and a defined CRS.
+        districts: Subdivision polygons with WADMPR parents and a defined CRS.
+        target: Single subdivision row with WADMKK and WADMPR fields.
+        region: Context provinces and reference cities to display.
+        output: Destination PNG path; parent directories are created as needed.
+
+    Returns:
+        None. Writes the map to output.
+
+    Raises:
+        ValueError: The dataset lacks a required context province.
+    """
     province = target.iloc[0].WADMPR
     context = provinces[provinces.PROVINSI.isin(region.provinces)]
     if set(context.PROVINSI) != set(region.provinces):

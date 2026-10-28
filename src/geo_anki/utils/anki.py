@@ -6,6 +6,14 @@ import genanki
 
 
 def stable_id(value: str) -> int:
+    """Derive a repeatable numeric identifier for an Anki model or deck.
+
+    Args:
+        value: Stable identifying string.
+
+    Returns:
+        Nonnegative 31-bit integer derived from the string's SHA-256 hash.
+    """
     return (
         int.from_bytes(hashlib.sha256(value.encode()).digest()[:4], "big") & 0x7FFFFFFF
     )
@@ -14,7 +22,16 @@ def stable_id(value: str) -> int:
 def write_deck(
     cards: list[tuple[str, str, str, Path]], output: Path, deck_name: str
 ) -> None:
-    """Cards contain a stable key, front text, back text, and image path."""
+    """Write map-backed notes and embedded images to an Anki package.
+
+    Args:
+        cards: Tuples of stable note key, front text, back text, and PNG path.
+        output: Destination .apkg path; parent directories are created as needed.
+        deck_name: Display name used to derive the stable deck ID.
+
+    Returns:
+        None. Writes the package to output.
+    """
     model = genanki.Model(
         stable_id("geo-anki:map-model:v1"),
         "Geo Anki Map",

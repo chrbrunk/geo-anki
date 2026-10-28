@@ -21,6 +21,20 @@ from geo_anki.utils.anki import write_deck
 def build_indonesia(
     targets: Path, output: Path, data: Path, deck_name: str
 ) -> list[Path]:
+    """Generate Indonesian maps, an Anki deck, and a dataset manifest.
+
+    Args:
+        targets: UTF-8 text file containing one subdivision name per line.
+        output: Destination .apkg path, also used to name maps and the manifest.
+        data: Local ZIP containing Indonesian boundary layers.
+        deck_name: Display name of the Anki deck.
+
+    Returns:
+        Generated PNG paths in target-file order.
+
+    Raises:
+        ValueError: Boundary data or requested subdivision names are invalid.
+    """
     provinces, districts = load_data(data)
     names = [
         line.strip()
@@ -76,6 +90,14 @@ def build_indonesia(
 
 
 def main() -> None:
+    """Parse command-line options and generate a geography deck.
+
+    Returns:
+        None. Writes output files and prints their locations.
+
+    Raises:
+        SystemExit: Help is requested or arguments or input data are invalid.
+    """
     parser = argparse.ArgumentParser(description="Generate map-based Anki decks.")
     parser.add_argument(
         "--country", required=True, type=str.lower, choices=["indonesia"]

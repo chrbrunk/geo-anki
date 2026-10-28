@@ -18,7 +18,17 @@ DATA_SHA256 = "1ace962c5c1617ed3c8c3104b9ff0ddc1047c9e0a4d345dd8c23bb38602406b9"
 
 
 def download_data(cache_dir: Path) -> Path:
-    """Cache a pinned, checksum-verified boundary archive."""
+    """Download or reuse a pinned, checksum-verified boundary archive.
+
+    Args:
+        cache_dir: Directory for the downloaded ZIP.
+
+    Returns:
+        Path to the verified archive.
+
+    Raises:
+        ValueError: The downloaded or cached archive fails checksum verification.
+    """
     path = cache_dir / f"indonesia-{DATA_REVISION}.zip"
     if path.exists():
         content = path.read_bytes()
@@ -34,10 +44,29 @@ def download_data(cache_dir: Path) -> Path:
 
 
 def normalize(name: str) -> str:
+    """Normalize Unicode, case, and whitespace for name matching.
+
+    Args:
+        name: Geographic name to normalize.
+
+    Returns:
+        Normalized name with single spaces between words.
+    """
     return " ".join(unicodedata.normalize("NFC", name).casefold().split())
 
 
 def load_data(path: Path) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
+    """Load and validate Indonesian province and subdivision boundaries.
+
+    Args:
+        path: ZIP containing the province and kabupaten GeoJSON files.
+
+    Returns:
+        Province and subdivision frames, in that order, using EPSG:4326.
+
+    Raises:
+        ValueError: Required layers, names, CRS, or polygon geometries are invalid.
+    """
     layers = []
     with ZipFile(path) as archive:
         for filename, fields in (
@@ -83,7 +112,18 @@ def load_data(path: Path) -> tuple[gpd.GeoDataFrame, gpd.GeoDataFrame]:
 
 
 def select_targets(districts: gpd.GeoDataFrame, names: list[str]) -> gpd.GeoDataFrame:
-    """Match full names, retaining Kota prefixes to distinguish municipalities."""
+    """Select subdivisions by full name, preserving Kota prefixes.
+
+    Args:
+        districts: Subdivision frame with WADMKK names and a unique index.
+        names: Requested names, in the desired card order.
+
+    Returns:
+        Copy of the matched rows in request order.
+
+    Raises:
+        ValueError: Names are empty, unknown, ambiguous, or duplicated.
+    """
     if not names:
         raise ValueError("Target list is empty.")
     keys = districts.WADMKK.map(normalize)

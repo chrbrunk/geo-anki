@@ -3,6 +3,14 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class Region:
+    """Geographic context and reference cities for a map.
+
+    Attributes:
+        name: Display name of the island or province.
+        provinces: Dataset province names included in the map extent.
+        cities: Tuples of name, longitude, latitude, and x/y label offsets in points.
+    """
+
     name: str
     provinces: tuple[str, ...]
     # City name, longitude, latitude, label offset in points.
@@ -94,6 +102,14 @@ REGIONS = (
 
 
 def region_for(province: str) -> Region:
+    """Choose island-wide context, falling back to the province itself.
+
+    Args:
+        province: Exact province name from the boundary dataset.
+
+    Returns:
+        Configured island region or a province-only region without cities.
+    """
     return next(
         (region for region in REGIONS if province in region.provinces),
         Region(province, (province,)),
