@@ -84,6 +84,7 @@ uv run pre-commit run --all-files
 
 GitHub Actions runs these checks and pytest with branch coverage on every push
 and pull request. Coverage and test reports are available as workflow artifacts.
+CI requires at least 90% combined statement and branch coverage.
 To run the same tests locally:
 
 ```bash

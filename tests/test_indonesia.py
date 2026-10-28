@@ -1,17 +1,19 @@
 import io
 import json
 import sqlite3
-from unittest.mock import patch
+import sys
+from unittest.mock import Mock, patch
 from zipfile import ZipFile
 
 import geopandas as gpd
 import pytest
 from matplotlib.axes import Axes
 from PIL import Image
-from shapely.geometry import box
+from shapely.geometry import Polygon, box
 
 from geo_anki.countries.indonesia import data
 from geo_anki.countries.indonesia.regions import Region, region_for
+from geo_anki.scripts import run
 from geo_anki.scripts.run import build_indonesia
 from geo_anki.utils.anki import write_deck
 
@@ -208,6 +210,7 @@ def test_region_selection():
     "field,value,message",
     [
         ("WADMKK", None, "Missing names"),
+        ("WADMKK", "  ", "Empty names"),
         ("WADMPR", "Unknown province", "unknown province"),
     ],
 )
@@ -267,3 +270,147 @@ def test_anki_ids_survive_reordered_batches(tmp_path):
     assert len(identities[0][0]) == 2
     assert len({guid for guid, _ in identities[0][0].values()}) == 2
     assert identities[0] == identities[1]
+
+
+@pytest.mark.parametrize("local_data", [True, False])
+def test_cli_builds_deck(tmp_path, dataset, monkeypatch, capsys, local_data):
+    """Exercise CLI generation with a local ZIP or a simulated download.
+
+    Args:
+        tmp_path: Temporary output directory.
+        dataset: Boundary ZIP fixture.
+        monkeypatch: Helper for setting CLI arguments and the map context.
+        capsys: Captured CLI output.
+        local_data: Whether to pass an explicit dataset path.
+
+    Returns:
+        None. Asserts the package, manifest, and download selection are correct.
+    """
+    targets = tmp_path / "targets.txt"
+    targets.write_text("Muaro Jambi\n", encoding="utf-8")
+    output = tmp_path / "deck.apkg"
+    cache = tmp_path / "cache"
+    arguments = [
+        "geo_anki",
+        "--country",
+        "Indonesia",
+        "--targets",
+        str(targets),
+        "--output",
+        str(output),
+        "--cache-dir",
+        str(cache),
+        "--deck-name",
+        "CLI example",
+    ]
+    if local_data:
+        arguments.extend(["--data", str(dataset)])
+    download = Mock(return_value=dataset)
+    monkeypatch.setattr(sys, "argv", arguments)
+    monkeypatch.setattr(run, "download_data", download)
+    monkeypatch.setattr(
+        run, "region_for", lambda province: Region(province, (province,))
+    )
+    run.main()
+    assert "1 cards and 1 PNG maps" in capsys.readouterr().out
+    if local_data:
+        download.assert_not_called()
+    else:
+        download.assert_called_once_with(cache)
+    with ZipFile(output) as archive:
+        assert len(json.loads(archive.read("media"))) == 1
+        database = tmp_path / "collection.sqlite"
+        database.write_bytes(archive.read("collection.anki2"))
+    with sqlite3.connect(database) as connection:
+        assert connection.execute("SELECT count(*) FROM notes").fetchone()[0] == 1
+        decks = json.loads(connection.execute("SELECT decks FROM col").fetchone()[0])
+        assert "CLI example" in [deck["name"] for deck in decks.values()]
+    manifest = json.loads(output.with_suffix(".json").read_text())
+    assert manifest["cards"][0]["name"] == "Muaro Jambi"
+
+
+@pytest.mark.parametrize(
+    "case,message",
+    [
+        ("suffix", "--output must end in .apkg"),
+        ("target", "Unknown kabupaten/kota"),
+        ("missing_file", "No such file"),
+        ("country", "invalid choice"),
+    ],
+)
+def test_cli_rejects_invalid_input(
+    tmp_path, dataset, monkeypatch, capsys, case, message
+):
+    """Verify CLI failures report an error without generating a deck.
+
+    Args:
+        tmp_path: Temporary input and output directory.
+        dataset: Boundary ZIP fixture.
+        monkeypatch: Helper for setting CLI arguments.
+        capsys: Captured CLI output.
+        case: Invalid-input scenario.
+        message: Expected error text.
+
+    Returns:
+        None. Asserts exit code 2 and absence of generated output.
+    """
+    targets = tmp_path / "targets.txt"
+    if case != "missing_file":
+        targets.write_text("Unknown subdivision\n", encoding="utf-8")
+    output = tmp_path / ("deck.txt" if case == "suffix" else "deck.apkg")
+    country = "unsupported" if case == "country" else "indonesia"
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "geo_anki",
+            "--country",
+            country,
+            "--targets",
+            str(targets),
+            "--data",
+            str(dataset),
+            "--output",
+            str(output),
+        ],
+    )
+    with pytest.raises(SystemExit) as error:
+        run.main()
+    assert error.value.code == 2
+    assert message in capsys.readouterr().err
+    assert not output.exists()
+    assert not output.with_suffix(".json").exists()
+    assert not (tmp_path / "deck_maps").exists()
+
+
+def test_geometry_repair_and_reprojection(dataset):
+    """Verify invalid polygons are repaired and projected data returns to WGS84.
+
+    Args:
+        dataset: Boundary ZIP fixture to modify.
+
+    Returns:
+        None. Asserts repaired polygon validity, CRS, and geographic bounds.
+    """
+    provinces, districts = data.load_data(dataset)
+    districts.loc[0, "geometry"] = Polygon(
+        [
+            (102, -3),
+            (104, -1),
+            (102, -1),
+            (104, -3),
+            (102, -3),
+        ]
+    )
+    with ZipFile(dataset, "w") as archive:
+        archive.writestr("indonesia_provinsi.geojson", provinces.to_crs(3857).to_json())
+        archive.writestr(
+            "indonesia_kabupaten.geojson", districts.to_crs(3857).to_json()
+        )
+    with pytest.warns(UserWarning, match="Repairing invalid geometries"):
+        provinces, districts = data.load_data(dataset)
+    assert provinces.crs.to_epsg() == districts.crs.to_epsg() == 4326
+    assert districts.is_valid.all()
+    assert not districts.is_empty.any()
+    assert districts.iloc[0].geometry.geom_type == "MultiPolygon"
+    assert districts.iloc[0].geometry.bounds == pytest.approx((102, -3, 104, -1))
