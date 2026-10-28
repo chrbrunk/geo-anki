@@ -1,3 +1,12 @@
-# One kabupaten/kota name per line; province is inferred.
+# Ten kabupaten across Kalimantan, Sumatra, Java, Sulawesi,
+# Bali, Lombok, Flores, and Papua. Province is inferred.
 Kutai Kartanegara
 Muaro Jambi
+Bandung
+Banyuwangi
+Gowa
+Maros
+Badung
+Lombok Timur
+Manggarai
+Jayapura
