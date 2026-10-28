@@ -69,7 +69,10 @@ After setup, install the Git hooks once per checkout:
 uv run pre-commit install
 ```
 
-Hooks run Ruff linting, formatting checks, and ty type checking before each commit.
+Hooks check configuration files, merge conflicts, filename case conflicts,
+debugger statements, whitespace, Ruff linting and formatting, and ty types.
+Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/),
+for example `feat: add a country` or `fix: correct a map label`.
 To run all configured checks across the repository manually:
 
 ```bash
