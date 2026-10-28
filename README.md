@@ -14,12 +14,20 @@ uv sync --locked
 uv run pytest
 uv run ruff check .
 uv run ruff format --check .
+uv run ty check
+uv run pre-commit install
+uv run pre-commit run --all-files
 uv build
 ```
 
 `uv sync` installs the package in editable mode and includes the development tools.
 Runtime dependencies will be added as features are implemented. Commit `uv.lock`
 when changing dependencies to keep development environments reproducible.
+
+Install the pre-commit hooks once per checkout. They run Ruff linting, formatting
+checks, and ty type checking before each commit, using the versions in `uv.lock`.
+Keep `uv` on your PATH when committing. Formatting checks report changes to make;
+run `uv run ruff format .` to apply them.
 
 ## Layout
 

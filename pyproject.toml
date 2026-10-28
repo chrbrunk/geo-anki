@@ -14,8 +14,10 @@ dependencies = []
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.7.0",
     "pytest>=8,<10",
     "ruff>=0.14,<1",
+    "ty>=0.0.94",
 ]
 
 [tool.hatch.build.targets.wheel]
