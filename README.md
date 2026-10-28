@@ -9,7 +9,8 @@
 
 ## 🗺️ Overview
 
-Generate map-based Anki flashcards from real geographic boundary data. Choose the
+Generate map-based [Anki](https://apps.ankiweb.net/) flashcards from real geographic
+boundary data. Choose the
 subdivisions you want to learn and export a deck with embedded maps. Cards show
 the country and subdivision on the front, and a highlighted map on the back.
 
