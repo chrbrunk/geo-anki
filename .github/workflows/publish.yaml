@@ -1,0 +1,36 @@
+name: Publish to PyPI
+
+on:
+  push:
+    branches:
+      - main
+      - feat/add-features-for-0.2.0-release
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+
+      - name: Build and publish
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          uv build --wheel
+          uv publish dist/*.whl
+
+      - name: Create tag
+        run: |
+          TAG="v$(uv version --short)"
+          git tag "$TAG"
+          git push origin "$TAG"
