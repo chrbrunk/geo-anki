@@ -1,5 +1,6 @@
 # 🌍 Geo Anki
 
+[![PyPI](https://img.shields.io/pypi/v/geo-anki)](https://pypi.org/project/geo-anki/)
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![uv](https://img.shields.io/badge/managed_with-uv-DE5FE9)](https://docs.astral.sh/uv/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-FAB040?logo=pre-commit&logoColor=black)](https://pre-commit.com/)
@@ -176,5 +177,5 @@ uv run pre-commit run --all-files
 ```
 
 Tox tests the built wheel with independently resolved dependencies on Python
-3.12–3.14 in CI, without using `uv.lock`. To run locally (requires those Python
+3.12–3.15 in CI, without using `uv.lock`. To run locally (requires those Python
 versions), use `uvx tox`; for just Python 3.12, use `uvx tox -e py312`.
