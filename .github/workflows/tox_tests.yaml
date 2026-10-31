@@ -1,7 +1,8 @@
-name: Tox wheel tests
+name: Tox tests
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
@@ -9,6 +10,7 @@ permissions:
 
 jobs:
   test:
+    name: Tox tests (${{ matrix.python }})
     runs-on: ubuntu-latest
     timeout-minutes: 15
     strategy:

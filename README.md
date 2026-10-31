@@ -1,7 +1,7 @@
 # 🌍 Geo Anki
 
-[![PyPI](https://img.shields.io/pypi/v/geo-anki)](https://pypi.org/project/geo-anki/)
 [![Python 3.12+](https://img.shields.io/badge/Python-3.12%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyPI](https://img.shields.io/pypi/v/geo-anki)](https://pypi.org/project/geo-anki/)
 [![uv](https://img.shields.io/badge/managed_with-uv-DE5FE9)](https://docs.astral.sh/uv/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-FAB040?logo=pre-commit&logoColor=black)](https://pre-commit.com/)
 [![pytest](https://img.shields.io/badge/tests-pytest-0A9EDC?logo=pytest&logoColor=white)](https://docs.pytest.org/)
