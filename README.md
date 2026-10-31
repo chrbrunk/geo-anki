@@ -69,6 +69,10 @@ islands. Find the [example input](examples/indonesia.txt) and
 [generated deck](examples/outputs/indonesia.apkg) in [examples/](examples/).
 Copy or replace the target file to choose your own subdivisions.
 
+**🧭 Build your own selection: [targets/indonesia.txt](targets/indonesia.txt) lists
+every kabupaten/kota name available in the pinned dataset, with the exact spelling
+to copy into your target file.**
+
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
 maps, and a JSON manifest. Run `uv run geo_anki --help` for additional options.
