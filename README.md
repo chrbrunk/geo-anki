@@ -15,14 +15,19 @@ subdivisions you want to learn and export a deck with embedded maps. Cards show
 the country and subdivision on the front, and a highlighted map on the back.
 
 > [!IMPORTANT]
-> **Currently, only Indonesia's kabupaten (regencies) and kota (cities) are
-> implemented.** These are second-level administrative divisions, below provinces.
+> **The following countries and subdivisions are supported:**
+>
+> - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
+> - **Philippines:** provinces.
+>
 > More countries are planned.
 
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
 
-## 🖼️ Example flashcard
+## 🖼️ Example flashcards
+
+### Indonesia
 
 **Front:** `Indonesia: Muaro Jambi`
 
@@ -31,6 +36,16 @@ the country and subdivision on the front, and a highlighted map on the back.
 Here, Jambi is the province, highlighted with a pale fill and bold outline.
 
 <img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="450">
+
+### Philippines
+
+**Front:** `Philippines: Camarines Sur`
+
+**Back:** `Camarines Sur`
+
+Camarines Sur is highlighted in orange on a map of the whole Philippines.
+
+<img src="examples/camarines_sur.png" alt="Map of the Philippines highlighting Camarines Sur on Luzon in orange" width="450">
 
 ## 🚀 Setup / Installation
 
@@ -56,22 +71,30 @@ uv run geo_anki \
   --output outputs/indonesia.apkg
 ```
 
-`--targets` accepts your own UTF-8 text file with one kabupaten/kota name per line,
-without a province. For example:
+`--targets` accepts your own UTF-8 text file with one subdivision name per line.
+For Indonesia, use kabupaten/kota names without a province. For example:
 
 ```text
 Kutai Kartanegara
 Muaro Jambi
 ```
 
-The supplied target file is a sample selection of 10 kabupaten across several
-islands. Find the [example input](examples/indonesia.txt) and
-[generated deck](examples/outputs/indonesia.apkg) in [examples/](examples/).
-Copy or replace the target file to choose your own subdivisions.
+Each supported country has a sample selection of 10 subdivisions in
+[examples/](examples/), with generated decks in
+[examples/outputs/](examples/outputs/):
 
-**🧭 Build your own selection: [targets/indonesia.txt](targets/indonesia.txt) lists
-every kabupaten/kota name available in the pinned dataset, with the exact spelling
-to copy into your target file.**
+- **Indonesia:** [example input](examples/indonesia.txt) ·
+  [generated deck](examples/outputs/indonesia.apkg)
+- **Philippines:** [example input](examples/philippines.txt) ·
+  [generated deck](examples/outputs/philippines.apkg)
+
+Copy or edit an example input to choose your own subdivisions.
+
+**🧭 Build your own selection: [targets/](targets/) contains the full lists,
+with the exact dataset spellings to copy into your target file.**
+
+- **Indonesia:** [kabupaten/kota names](targets/indonesia.txt)
+- **Philippines:** [province names](targets/philippines.txt)
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
@@ -82,6 +105,12 @@ maps, and a JSON manifest. Run `uv run geo_anki --help` for additional options.
 Indonesia boundaries come from
 [Indonesia-Geojson-2026](https://github.com/mashadinoor/Indonesia-Geojson-2026)
 (MIT; mashadinoor and ardian28). Coverage may be incomplete or outdated.
+
+Philippines boundaries come from
+[philippines-json-maps](https://github.com/faeldon/philippines-json-maps)
+(PSGC 3Q 2026; MIT maps by James Faeldon), based on NAMRIA and PSA boundaries via
+[OCHA COD-AB](https://data.humdata.org/dataset/cod-ab-phl)
+([CC BY-IGO 3.0](https://creativecommons.org/licenses/by/3.0/igo/)).
 
 ## 🛠️ Development
 
