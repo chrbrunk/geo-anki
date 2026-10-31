@@ -172,6 +172,10 @@ district codes (AGS) are also accepted.
 
 ## 📍 Data sources
 
+Geo Anki's code is MIT-licensed; third-party data and fonts retain their own terms.
+See [Third-party notices](THIRD_PARTY_NOTICES.md) for source and license links,
+attribution, and outstanding source-license verification.
+
 Indonesia boundaries come from
 [Indonesia-Geojson-2026](https://github.com/mashadinoor/Indonesia-Geojson-2026)
 (MIT; mashadinoor and ardian28). Coverage may be incomplete or outdated.
