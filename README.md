@@ -93,7 +93,7 @@ Hiroshima is highlighted on a map of Japan's main islands, with reference cities
 and Okinawa in a boxed inset. Remote southern and southeastern islands are omitted.
 Card fronts use Japanese prefecture names; map titles show Japanese and English.
 
-<img src="examples/images/japan_hiroshima.png" alt="Map of Japan highlighting Hiroshima, with reference cities and a boxed Okinawa inset" width="450">
+<img src="examples/images/hiroshima.png" alt="Map of Japan highlighting Hiroshima, with reference cities and a boxed Okinawa inset" width="450">
 
 ## 📦 Installation
 
