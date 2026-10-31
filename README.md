@@ -174,3 +174,7 @@ To run all configured checks across the repository manually:
 ```bash
 uv run pre-commit run --all-files
 ```
+
+Tox tests the built wheel with independently resolved dependencies on Python
+3.12–3.14 in CI, without using `uv.lock`. To run locally (requires those Python
+versions), use `uvx tox`; for just Python 3.12, use `uvx tox -e py312`.
