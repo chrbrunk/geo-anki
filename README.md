@@ -21,6 +21,7 @@ the country and subdivision on the front, and a highlighted map on the back.
 > - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
 > - **Philippines:** provinces.
 > - **Bangladesh:** districts.
+> - **Germany:** Landkreise and kreisfreie Städte.
 >
 > More countries are planned.
 
@@ -70,6 +71,17 @@ the Bengali district name; map titles show both Bengali and English names.
 
 <img src="examples/images/dhaka.png" alt="Map of Bangladesh highlighting Dhaka district, with a Bengali and English title and reference cities" width="450">
 
+### Germany
+
+**Front:** `Germany: Nordfriesland`
+
+**Back:** `Schleswig-Holstein`
+
+The district is highlighted on a map of its entire Bundesland, with fixed
+reference cities for that state.
+
+<img src="examples/images/nordfriesland.png" alt="Map of Schleswig-Holstein highlighting Landkreis Nordfriesland with reference cities" width="450">
+
 ## 📦 Installation
 
 Requires Python 3.12+. Install the current release from PyPI:
@@ -101,6 +113,10 @@ Muaro Jambi
 
 For Bangladesh, target files accept either Bengali or English district names.
 
+For Germany, a shared name such as `München` selects the Landkreis;
+`München (kreisfreie Stadt)` selects the separate city. Official five-digit
+district codes (AGS) are also accepted.
+
 Each supported country has a sample selection of 10 subdivisions in
 [examples/](examples/), with generated decks in
 [examples/outputs/](examples/outputs/):
@@ -111,6 +127,8 @@ Each supported country has a sample selection of 10 subdivisions in
   [generated deck](examples/outputs/philippines.apkg)
 - **Bangladesh:** [example input](examples/bangladesh.txt) ·
   [generated deck](examples/outputs/bangladesh.apkg)
+- **Germany:** [example input](examples/germany.txt) ·
+  [generated deck](examples/outputs/germany.apkg)
 
 Copy or edit an example input to choose your own subdivisions.
 
@@ -120,6 +138,7 @@ with the exact dataset spellings to copy into your target file.**
 - **Indonesia:** [kabupaten/kota names](targets/indonesia.txt)
 - **Philippines:** [province names](targets/philippines.txt)
 - **Bangladesh:** [district names](targets/bangladesh.txt)
+- **Germany:** [district names](targets/germany.txt)
 
 We recommend using an AI chatbot of your choice to filter a list from
 [targets/](targets/) into the subset you want, for example, "only Java kabupaten
@@ -145,6 +164,11 @@ Bangladesh district boundaries and bilingual names come from
 [bangladesh-geocode](https://github.com/nuhil/bangladesh-geocode)
 (MIT; Nuhil Mehdy). Bengali text uses the bundled Noto Sans Bengali font
 ([SIL Open Font License 1.1](src/geo_anki/countries/bangladesh/fonts/OFL.txt)).
+
+Germany uses BKG VG250 state and district boundaries (2026-01-01), converted to
+GeoJSON by [Michael Kreil](https://github.com/MichaelKreil/verwaltungsgebiete).
+© GeoBasis-DE / BKG 2026 (Daten verändert), licensed under
+[Datenlizenz Deutschland – Namensnennung 2.0](https://www.govdata.de/dl-de/by-2-0).
 
 ## 💻 Development
 

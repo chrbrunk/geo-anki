@@ -1,0 +1,12 @@
+# Ten Landkreise and kreisfreie Städte across nine Bundesländer.
+# Includes Landkreis München and the separate kreisfreie Stadt München.
+Stendal
+München
+München (kreisfreie Stadt)
+Karlsruhe (kreisfreie Stadt)
+Nordfriesland
+Vorpommern-Rügen
+Region Hannover
+Städteregion Aachen
+Potsdam-Mittelmark
+Berlin
