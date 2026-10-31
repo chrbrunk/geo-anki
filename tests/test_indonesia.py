@@ -2,6 +2,7 @@ import io
 import json
 import sqlite3
 import sys
+from dataclasses import replace
 from unittest.mock import Mock, patch
 from zipfile import ZipFile
 
@@ -307,7 +308,11 @@ def test_cli_builds_deck(tmp_path, dataset, monkeypatch, capsys, local_data):
         arguments.extend(["--data", str(dataset)])
     download = Mock(return_value=dataset)
     monkeypatch.setattr(sys, "argv", arguments)
-    monkeypatch.setattr(run, "download_data", download)
+    monkeypatch.setitem(
+        run.COUNTRIES,
+        "indonesia",
+        replace(run.COUNTRIES["indonesia"], download_data=download),
+    )
     monkeypatch.setattr(
         build, "region_for", lambda province: Region(province, (province,))
     )

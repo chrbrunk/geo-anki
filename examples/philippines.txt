@@ -1,0 +1,12 @@
+# Ten provinces across Luzon, the Visayas, and Mindanao.
+# Includes three provinces with arrow pointers and seven without.
+Batanes
+Isabela
+Palawan
+Camarines Sur
+Cebu
+Bohol
+Leyte
+Camiguin
+Davao Oriental
+Tawi-Tawi
