@@ -26,6 +26,24 @@ the country and subdivision on the front, and a highlighted map on the back.
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
 
+## Getting started
+
+- To install Geo Anki, see [Installation](#installation).
+- To create a deck, see [Usage](#usage).
+
+You can also give this repository to your favorite AI chatbot that can run
+Python and ask it to create a deck for you. For example:
+
+```text
+Create an Anki deck for all kabupaten (regencies, excluding kota/cities)
+in Java using https://github.com/chrbrunk/geo-anki.
+Read README.md and the Indonesia data.py and regions.py files under
+src/geo_anki/countries/indonesia/. Use the pinned dataset and the Java
+province list to select the available kabupaten, checking exact names
+against targets/indonesia.txt. Report missing or ambiguous places rather
+than guessing. Run geo_anki and return the .apkg, target list, and card count.
+```
+
 ## 🖼️ Example flashcards
 
 ### Indonesia
@@ -62,24 +80,17 @@ the Bengali district name; map titles show both Bengali and English names.
 
 <img src="examples/images/dhaka.png" alt="Map of Bangladesh highlighting Dhaka district, with a Bengali and English title and reference cities" width="450">
 
-## 🚀 Setup / Installation
+## Installation
 
-Requires Python 3.12+. Install the current alpha release from PyPI:
-
-```bash
-pip install --pre geo-anki
-```
-
-For development, clone the repository and install its dependencies with
-[uv](https://docs.astral.sh/uv/):
+Requires Python 3.12+. Install the current release from PyPI:
 
 ```bash
-git clone https://github.com/chrbrunk/geo-anki.git
-cd geo-anki
-uv sync --locked
+pip install geo-anki
 ```
 
-## 🃏 Usage
+For development installation, see [Development](#development).
+
+## Usage
 
 Generate a deck using the example Indonesia selection:
 
@@ -89,8 +100,6 @@ geo_anki \
   --targets examples/indonesia.txt \
   --output outputs/indonesia.apkg
 ```
-
-From a repository checkout, use `uv run geo_anki` instead.
 
 `--targets` accepts your own UTF-8 text file with one subdivision name per line.
 For Indonesia, use kabupaten/kota names without a province. For example:
@@ -124,7 +133,7 @@ with the exact dataset spellings to copy into your target file.**
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
-maps, and a JSON manifest. Run `uv run geo_anki --help` for additional options.
+maps, and a JSON manifest. Run `geo_anki --help` for additional options.
 
 ## 📍 Data sources
 
@@ -143,7 +152,19 @@ Bangladesh district boundaries and bilingual names come from
 (MIT; Nuhil Mehdy). Bengali text uses the bundled Noto Sans Bengali font
 ([SIL Open Font License 1.1](src/geo_anki/countries/bangladesh/fonts/OFL.txt)).
 
-## 🛠️ Development
+## Development
+
+Clone the repository and install its dependencies with
+[uv](https://docs.astral.sh/uv/):
+
+```bash
+git clone https://github.com/chrbrunk/geo-anki.git
+cd geo-anki
+uv sync --locked
+```
+
+From a repository checkout, use `uv run geo_anki` instead of `geo_anki` for
+the commands in [Usage](#usage).
 
 After setup, install the Git hooks once per checkout:
 
