@@ -6,6 +6,7 @@ from matplotlib.figure import Figure
 from matplotlib.patches import Patch
 
 from geo_anki.countries.philippines.data import DATA_ATTRIBUTION
+from geo_anki.countries.philippines.references import REFERENCE_PLACES
 
 HIGHLIGHT_COLOR = "#f18d32"
 
@@ -26,7 +27,9 @@ SMALL_PROVINCE_ARROWS = {
 
 
 def render_map(
-    boundaries: gpd.GeoDataFrame, target: gpd.GeoDataFrame, output: Path
+    boundaries: gpd.GeoDataFrame,
+    target: gpd.GeoDataFrame,
+    output: Path,
 ) -> None:
     """Save a whole-country map highlighting one Philippine province.
 
@@ -75,7 +78,17 @@ def render_map(
     ax.set_ylim(ymin - padding, ymax + padding)
     ax.set_aspect("equal")
     ax.set_axis_off()
-    ax.set_title(name, fontsize=14)
+    reference = REFERENCE_PLACES[name]
+    ax.set_title(name, fontsize=14, pad=28)
+    ax.text(
+        0.5,
+        1.015,
+        f"Reference {reference.kind}: {reference.name}",
+        transform=ax.transAxes,
+        ha="center",
+        va="bottom",
+        fontsize=10,
+    )
     ax.legend(
         handles=[Patch(facecolor=HIGHLIGHT_COLOR, label="Selected province")],
         loc="lower left",

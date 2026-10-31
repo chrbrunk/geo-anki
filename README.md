@@ -47,6 +47,8 @@ Camarines Sur is highlighted in orange on a map of the whole Philippines.
 
 <img src="examples/camarines_sur.png" alt="Map of the Philippines highlighting Camarines Sur on Luzon in orange" width="450">
 
+The map also names a reference city or town for the province.
+
 ## 🚀 Setup / Installation
 
 Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).

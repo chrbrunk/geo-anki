@@ -3,6 +3,7 @@ import json
 import sqlite3
 import sys
 from dataclasses import replace
+from pathlib import Path
 from unittest.mock import Mock, patch
 from zipfile import ZipFile
 
@@ -15,6 +16,7 @@ from shapely.geometry import MultiPolygon, Point, Polygon, box
 from geo_anki.countries.philippines import data
 from geo_anki.countries.philippines.build import build_philippines
 from geo_anki.countries.philippines.maps import render_map
+from geo_anki.countries.philippines.references import REFERENCE_PLACES
 from geo_anki.scripts import run
 
 
@@ -387,3 +389,56 @@ def test_geometry_repair_and_reprojection(dataset):
     assert result.is_valid.all()
     assert result.iloc[0].geometry.geom_type == "MultiPolygon"
     assert result.iloc[0].geometry.bounds == pytest.approx((121, 20, 122, 21))
+
+
+def test_reference_places_cover_all_provinces():
+    """Keep the curated reference mapping in sync with the full province list.
+
+    Returns:
+        None. Asserts every supported province has a named city or town.
+    """
+    targets = Path(__file__).resolve().parents[1] / "targets/philippines.txt"
+    names = {
+        line.strip()
+        for line in targets.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.startswith("#")
+    }
+    assert len(names) == 82
+    assert names == set(REFERENCE_PLACES)
+    assert all(place.name.strip() for place in REFERENCE_PLACES.values())
+    assert all(place.kind in {"city", "town"} for place in REFERENCE_PLACES.values())
+
+
+@pytest.mark.parametrize(
+    "province, subtitle",
+    [("Cebu", "Reference city: Cebu City"), ("Batanes", "Reference town: Basco")],
+)
+def test_reference_subtitle(dataset, tmp_path, province, subtitle):
+    """Use a smaller subtitle and distinguish cities from reference towns.
+
+    Args:
+        dataset: Province/district archive fixture.
+        tmp_path: Directory for the rendered map.
+        province: Province with a city or town reference.
+        subtitle: Expected reference-place label.
+
+    Returns:
+        None. Asserts correct labeling and a smaller reference font.
+    """
+    boundaries = data.load_data(dataset)
+    target = data.select_targets(boundaries, [province])
+    with (
+        patch.object(
+            Axes, "set_title", autospec=True, side_effect=Axes.set_title
+        ) as title,
+        patch.object(Axes, "text", autospec=True, side_effect=Axes.text) as text,
+    ):
+        render_map(boundaries, target, tmp_path / "reference.png")
+    assert title.call_args.args[1] == province
+    labels = [
+        call
+        for call in text.call_args_list
+        if len(call.args) > 3 and call.args[3] == subtitle
+    ]
+    assert len(labels) == 1
+    assert labels[0].kwargs["fontsize"] < title.call_args.kwargs["fontsize"]
