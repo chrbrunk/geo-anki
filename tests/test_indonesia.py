@@ -11,10 +11,10 @@ from matplotlib.axes import Axes
 from PIL import Image
 from shapely.geometry import Polygon, box
 
-from geo_anki.countries.indonesia import data
+from geo_anki.countries.indonesia import build, data
+from geo_anki.countries.indonesia.build import build_indonesia
 from geo_anki.countries.indonesia.regions import Region, region_for
 from geo_anki.scripts import run
-from geo_anki.scripts.run import build_indonesia
 from geo_anki.utils.anki import write_deck
 
 
@@ -146,7 +146,7 @@ def test_map_and_deck(tmp_path, dataset, monkeypatch):
     """
     # Use a small province context so this fixture need not mimic all of Sumatra.
     monkeypatch.setattr(
-        "geo_anki.scripts.run.region_for",
+        "geo_anki.countries.indonesia.build.region_for",
         lambda province: Region(
             province, (province,), (("Jambi", 103.6131, -1.6101, 5, 5),)
         ),
@@ -309,7 +309,7 @@ def test_cli_builds_deck(tmp_path, dataset, monkeypatch, capsys, local_data):
     monkeypatch.setattr(sys, "argv", arguments)
     monkeypatch.setattr(run, "download_data", download)
     monkeypatch.setattr(
-        run, "region_for", lambda province: Region(province, (province,))
+        build, "region_for", lambda province: Region(province, (province,))
     )
     run.main()
     assert "1 cards and 1 PNG maps" in capsys.readouterr().out
