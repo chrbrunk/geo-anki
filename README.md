@@ -64,8 +64,14 @@ the Bengali district name; map titles show both Bengali and English names.
 
 ## 🚀 Setup / Installation
 
-Requires Python 3.12+ and [uv](https://docs.astral.sh/uv/).
-For now, clone the repository and install its dependencies with uv:
+Requires Python 3.12+. Install the current alpha release from PyPI:
+
+```bash
+pip install --pre geo-anki
+```
+
+For development, clone the repository and install its dependencies with
+[uv](https://docs.astral.sh/uv/):
 
 ```bash
 git clone https://github.com/chrbrunk/geo-anki.git
@@ -73,18 +79,18 @@ cd geo-anki
 uv sync --locked
 ```
 
-Installation from PyPI via `pip` will be added later.
-
 ## 🃏 Usage
 
 Generate a deck using the example Indonesia selection:
 
 ```bash
-uv run geo_anki \
+geo_anki \
   --country indonesia \
   --targets examples/indonesia.txt \
   --output outputs/indonesia.apkg
 ```
+
+From a repository checkout, use `uv run geo_anki` instead.
 
 `--targets` accepts your own UTF-8 text file with one subdivision name per line.
 For Indonesia, use kabupaten/kota names without a province. For example:
