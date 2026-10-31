@@ -1,0 +1,12 @@
+# Ten districts across all eight divisions, from the north to the coast.
+# Select by English name; district names on card fronts are Bengali.
+Dhaka
+Chattogram
+Sylhet
+Rangpur
+Rajshahi
+Khulna
+Barishal
+Mymensingh
+Cox's Bazar
+Tangail

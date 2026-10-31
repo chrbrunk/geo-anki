@@ -19,6 +19,7 @@ the country and subdivision on the front, and a highlighted map on the back.
 >
 > - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
 > - **Philippines:** provinces.
+> - **Bangladesh:** districts.
 >
 > More countries are planned.
 
@@ -35,7 +36,7 @@ the country and subdivision on the front, and a highlighted map on the back.
 
 Here, Jambi is the province, highlighted with a pale fill and bold outline.
 
-<img src="examples/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="450">
+<img src="examples/images/muaro_jambi.png" alt="Map of Sumatra highlighting Muaro Jambi in orange and Jambi province with a bold outline" width="450">
 
 ### Philippines
 
@@ -45,9 +46,21 @@ Here, Jambi is the province, highlighted with a pale fill and bold outline.
 
 Camarines Sur is highlighted in orange on a map of the whole Philippines.
 
-<img src="examples/camarines_sur.png" alt="Map of the Philippines highlighting Camarines Sur on Luzon in orange" width="450">
+<img src="examples/images/camarines_sur.png" alt="Map of the Philippines highlighting Camarines Sur on Luzon in orange" width="450">
 
 The map also names a reference city or town for the province.
+
+### Bangladesh
+
+**Front:** `Bangladesh: ঢাকা`
+
+**Back:** `Dhaka`
+
+Dhaka district is highlighted in orange on a map of the whole country, with
+reference cities marked. Card fronts use the English country name followed by
+the Bengali district name; map titles show both Bengali and English names.
+
+<img src="examples/images/dhaka.png" alt="Map of Bangladesh highlighting Dhaka district, with a Bengali and English title and reference cities" width="450">
 
 ## 🚀 Setup / Installation
 
@@ -81,6 +94,8 @@ Kutai Kartanegara
 Muaro Jambi
 ```
 
+For Bangladesh, target files accept either Bengali or English district names.
+
 Each supported country has a sample selection of 10 subdivisions in
 [examples/](examples/), with generated decks in
 [examples/outputs/](examples/outputs/):
@@ -89,6 +104,8 @@ Each supported country has a sample selection of 10 subdivisions in
   [generated deck](examples/outputs/indonesia.apkg)
 - **Philippines:** [example input](examples/philippines.txt) ·
   [generated deck](examples/outputs/philippines.apkg)
+- **Bangladesh:** [example input](examples/bangladesh.txt) ·
+  [generated deck](examples/outputs/bangladesh.apkg)
 
 Copy or edit an example input to choose your own subdivisions.
 
@@ -97,6 +114,7 @@ with the exact dataset spellings to copy into your target file.**
 
 - **Indonesia:** [kabupaten/kota names](targets/indonesia.txt)
 - **Philippines:** [province names](targets/philippines.txt)
+- **Bangladesh:** [district names](targets/bangladesh.txt)
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
@@ -113,6 +131,11 @@ Philippines boundaries come from
 (PSGC 3Q 2026; MIT maps by James Faeldon), based on NAMRIA and PSA boundaries via
 [OCHA COD-AB](https://data.humdata.org/dataset/cod-ab-phl)
 ([CC BY-IGO 3.0](https://creativecommons.org/licenses/by/3.0/igo/)).
+
+Bangladesh district boundaries and bilingual names come from
+[bangladesh-geocode](https://github.com/nuhil/bangladesh-geocode)
+(MIT; Nuhil Mehdy). Bengali text uses the bundled Noto Sans Bengali font
+([SIL Open Font License 1.1](src/geo_anki/countries/bangladesh/fonts/OFL.txt)).
 
 ## 🛠️ Development
 
