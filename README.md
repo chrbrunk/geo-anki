@@ -21,7 +21,7 @@ the country and subdivision on the front, and a highlighted map on the back.
 > - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
 > - **Philippines:** provinces.
 > - **Bangladesh:** districts.
-> - **Germany:** Landkreise and kreisfreie Städte.
+> - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
 >
 > More countries are planned.
 
@@ -75,7 +75,7 @@ the Bengali district name; map titles show both Bengali and English names.
 
 **Front:** `Germany: Nordfriesland`
 
-**Back:** `Schleswig-Holstein`
+**Back:** `Kreis Nordfriesland — Schleswig-Holstein`
 
 The district is highlighted on a map of its entire Bundesland, with fixed
 reference cities for that state.

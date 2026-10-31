@@ -50,7 +50,15 @@ def build_germany(
             image_dir / f"germany_{hashlib.sha256(key.encode()).hexdigest()[:16]}.png"
         )
         render_map(states, boundaries, target, image)
-        cards.append((key, f"Germany: {name}", str(target.iloc[0].state), image))
+        row = target.iloc[0]
+        district_name = str(row.GEN)
+        if row.BEZ in ("Kreisfreie Stadt", "Stadtkreis"):
+            full_name = f"Kreisfreie Stadt {district_name}"
+        elif district_name.startswith(("Region ", "Städteregion ", "Regionalverband ")):
+            full_name = district_name
+        else:
+            full_name = f"{row.BEZ} {district_name}"
+        cards.append((key, f"Germany: {name}", f"{full_name} — {row.state}", image))
         manifest.append(
             {
                 "name": name,

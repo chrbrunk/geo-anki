@@ -326,9 +326,12 @@ def test_cli_state_answers_and_embedded_maps(
     with sqlite3.connect(db) as c:
         notes = c.execute("SELECT guid, flds FROM notes ORDER BY id").fetchall()
         assert [row[1].split("\x1f")[:2] for row in notes] == [
-            ["Germany: München", "Bayern"],
-            ["Germany: München (kreisfreie Stadt)", "Bayern"],
-            ["Germany: Stendal", "Sachsen-Anhalt"],
+            ["Germany: München", "Landkreis München — Bayern"],
+            [
+                "Germany: München (kreisfreie Stadt)",
+                "Kreisfreie Stadt München — Bayern",
+            ],
+            ["Germany: Stendal", "Landkreis Stendal — Sachsen-Anhalt"],
         ]
         assert len({row[0] for row in notes}) == 3
         assert c.execute("SELECT count(*) FROM cards").fetchone()[0] == 3
