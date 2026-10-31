@@ -1,0 +1,11 @@
+# Ten prefectures across Japan, from Hokkaido to Okinawa
+Hokkaido
+Aomori
+Miyagi
+Tokyo
+Ishikawa
+Osaka
+Hiroshima
+Ehime
+Fukuoka
+Okinawa
