@@ -124,18 +124,6 @@ Kutai Kartanegara
 Muaro Jambi
 ```
 
-For Bangladesh, target files accept either Bengali or English district names.
-
-For Japan, target files accept English or Japanese prefecture names (including
-Japanese names without their suffix) and two-digit JIS codes. Card fronts use
-the Japanese name, while backs show its English name and a map with reference
-cities and a boxed Okinawa inset. Remote southern and southeastern islands are
-omitted. Map titles show both names.
-
-For Germany, a shared name such as `München` selects the Landkreis;
-`München (kreisfreie Stadt)` selects the separate city. Official five-digit
-district codes (AGS) are also accepted.
-
 Each supported country has a sample selection of 10 subdivisions in
 [examples/](examples/), with generated decks in
 [examples/outputs/](examples/outputs/):
@@ -169,6 +157,18 @@ We recommend using an AI chatbot of your choice to filter a list from
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
 maps, and a JSON manifest. Run `geo_anki --help` for additional options.
+
+For Bangladesh, target files accept either Bengali or English district names.
+
+For Japan, target files accept English or Japanese prefecture names (including
+Japanese names without their suffix) and two-digit JIS codes. Card fronts use
+the Japanese name, while backs show its English name and a map with reference
+cities and a boxed Okinawa inset. Remote southern and southeastern islands are
+omitted. Map titles show both names.
+
+For Germany, a shared name such as `München` selects the Landkreis;
+`München (kreisfreie Stadt)` selects the separate city. Official five-digit
+district codes (AGS) are also accepted.
 
 ## 📍 Data sources
 
