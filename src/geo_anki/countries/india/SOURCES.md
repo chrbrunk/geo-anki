@@ -34,7 +34,7 @@ Assam uses English by explicit user choice. Other states and multilingual
 territories use English. No required native name silently falls back to English.
 Backs and map subtitles are always English. Target selection accepts source
 English names, native names, state-qualified names and unpadded LGD district codes.
-All full-list targets are qualified with their state to resolve repeated names.
+Full-list targets include a state suffix only to resolve repeated district names.
 
 Noto Sans Devanagari Regular is bundled unchanged from
 `notofonts/noto-fonts` commit `ffebf8c1ee449e544955a7e813c54f9b73848eac`.

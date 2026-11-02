@@ -345,10 +345,18 @@ def test_language_policy_font_coverage_and_shipped_lists():
         if s and not s.startswith("#")
     ]
     assert len(targets) == len(set(targets)) == 731
-    assert {s.split(" — ")[1] for s in targets} == set(STATES.values())
+    district_names = [s.split(" — ")[0] for s in targets]
+    for target in targets:
+        name, separator, state = target.partition(" — ")
+        if district_names.count(name) > 1:
+            assert separator and state in STATES.values()
+        else:
+            assert not separator
     examples = [
         s
         for s in (root / "examples/india.txt").read_text().splitlines()
         if s and not s.startswith("#")
     ]
-    assert len(examples) == 10 and set(examples).issubset(targets)
+    assert len(examples) == len(set(examples)) == 10
+    assert set(examples).issubset(targets)
+    assert all(district_names.count(name) == 1 for name in examples)

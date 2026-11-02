@@ -1,734 +1,735 @@
 # Survey of India collection released 2023-12-11: 731 coded districts.
 # Historical snapshot; excludes later splits/renamings and uncoded context areas.
 # English/native names and LGD district codes are also accepted.
-Nicobar — Andaman and Nicobar Islands
-North & Middle Andaman — Andaman and Nicobar Islands
-South Andaman — Andaman and Nicobar Islands
-Anantapur — Andhra Pradesh
-Chittoor — Andhra Pradesh
-East Godavari — Andhra Pradesh
-Guntur — Andhra Pradesh
-Krishna — Andhra Pradesh
-Kurnool — Andhra Pradesh
-Potti Sriramulu Nellore — Andhra Pradesh
-Prakasam — Andhra Pradesh
-Srikakulam — Andhra Pradesh
-Visakhapatnam — Andhra Pradesh
-Vizianagaram — Andhra Pradesh
-West Godavari — Andhra Pradesh
-Y S R Kadapa — Andhra Pradesh
-Anjaw — Arunachal Pradesh
-Changlang — Arunachal Pradesh
-Dibang Valley — Arunachal Pradesh
-East Kameng — Arunachal Pradesh
-East Siang — Arunachal Pradesh
-Kamle — Arunachal Pradesh
-Kra Daadi — Arunachal Pradesh
-Kurung Kumey — Arunachal Pradesh
-Lepa Rada — Arunachal Pradesh
-Lohit — Arunachal Pradesh
-Longding — Arunachal Pradesh
-Lower Dibang Valley — Arunachal Pradesh
-Lower Siang — Arunachal Pradesh
-Lower Subansiri — Arunachal Pradesh
-Namsai — Arunachal Pradesh
-Pakke Kessang — Arunachal Pradesh
-Papumpare — Arunachal Pradesh
-Shi Yomi — Arunachal Pradesh
-Siang — Arunachal Pradesh
-Tawang — Arunachal Pradesh
-Tirap — Arunachal Pradesh
-Upper Siang — Arunachal Pradesh
-Upper Subansiri — Arunachal Pradesh
-West Kameng — Arunachal Pradesh
-West Siang — Arunachal Pradesh
-Baksa — Assam
-Barpeta — Assam
-Biswanath — Assam
-Bongaigaon — Assam
-Cachar — Assam
-Charaideo — Assam
-Chirang — Assam
-Darrang — Assam
-Dhemaji — Assam
-Dhubri — Assam
-Dibrugarh — Assam
-Dima Hasao — Assam
-Goalpara — Assam
-Golaghat — Assam
-Hailakandi — Assam
-Hojai — Assam
-Jorhat — Assam
-Kamrup Metro — Assam
-Kamrup Rural — Assam
-Karbi Anglong — Assam
-Karimganj — Assam
-Kokrajhar — Assam
-Lakhimpur — Assam
-Majuli — Assam
-Marigaon — Assam
-Nagaon — Assam
-Nalbari — Assam
-Sibsagar — Assam
-Sonitpur — Assam
-South Salmara Mancachar — Assam
-Tinsukia — Assam
-Udalguri — Assam
-West Karbi Anglong — Assam
-Araria — Bihar
-Arwal — Bihar
+# State suffixes distinguish repeated district names; omit them for unique names.
+Nicobar
+North & Middle Andaman
+South Andaman
+Anantapur
+Chittoor
+East Godavari
+Guntur
+Krishna
+Kurnool
+Potti Sriramulu Nellore
+Prakasam
+Srikakulam
+Visakhapatnam
+Vizianagaram
+West Godavari
+Y S R Kadapa
+Anjaw
+Changlang
+Dibang Valley
+East Kameng
+East Siang
+Kamle
+Kra Daadi
+Kurung Kumey
+Lepa Rada
+Lohit
+Longding
+Lower Dibang Valley
+Lower Siang
+Lower Subansiri
+Namsai
+Pakke Kessang
+Papumpare
+Shi Yomi
+Siang
+Tawang
+Tirap
+Upper Siang
+Upper Subansiri
+West Kameng
+West Siang
+Baksa
+Barpeta
+Biswanath
+Bongaigaon
+Cachar
+Charaideo
+Chirang
+Darrang
+Dhemaji
+Dhubri
+Dibrugarh
+Dima Hasao
+Goalpara
+Golaghat
+Hailakandi
+Hojai
+Jorhat
+Kamrup Metro
+Kamrup Rural
+Karbi Anglong
+Karimganj
+Kokrajhar
+Lakhimpur
+Majuli
+Marigaon
+Nagaon
+Nalbari
+Sibsagar
+Sonitpur
+South Salmara Mancachar
+Tinsukia
+Udalguri
+West Karbi Anglong
+Araria
+Arwal
 Aurangabad — Bihar
-Banka — Bihar
-Begusarai — Bihar
-Bhagalpur — Bihar
-Bhojpur — Bihar
-Buxar — Bihar
-Darbhanga — Bihar
-Gaya — Bihar
-Gopalganj — Bihar
-Jahanabad — Bihar
-Jamui — Bihar
-Kaimur — Bihar
-Katihar — Bihar
-Khagaria — Bihar
-Kishanganj — Bihar
-Lakhisarai — Bihar
-Madhepura — Bihar
-Madhubani — Bihar
-Munger — Bihar
-Muzaffarpur — Bihar
-Nalanda — Bihar
-Nawada — Bihar
-Pashchimi Champaran — Bihar
-Patna — Bihar
-Purbi Champaran — Bihar
-Purnia — Bihar
-Rohtas — Bihar
-Saharsa — Bihar
-Samastipur — Bihar
-Saran — Bihar
-Sheikhpura — Bihar
-Sheohar — Bihar
-Sitamarhi — Bihar
-Siwan — Bihar
-Supaul — Bihar
-Vaishali — Bihar
-Chandigarh — Chandigarh
-Balod — Chhattisgarh
-Baloda Bazar — Chhattisgarh
+Banka
+Begusarai
+Bhagalpur
+Bhojpur
+Buxar
+Darbhanga
+Gaya
+Gopalganj
+Jahanabad
+Jamui
+Kaimur
+Katihar
+Khagaria
+Kishanganj
+Lakhisarai
+Madhepura
+Madhubani
+Munger
+Muzaffarpur
+Nalanda
+Nawada
+Pashchimi Champaran
+Patna
+Purbi Champaran
+Purnia
+Rohtas
+Saharsa
+Samastipur
+Saran
+Sheikhpura
+Sheohar
+Sitamarhi
+Siwan
+Supaul
+Vaishali
+Chandigarh
+Balod
+Baloda Bazar
 Balrampur — Chhattisgarh
-Bastar — Chhattisgarh
-Bemetara — Chhattisgarh
-Bijapur — Chhattisgarh
+Bastar
+Bemetara
+Bijapur
 Bilaspur — Chhattisgarh
-Dakshin Bastar Dantewada — Chhattisgarh
-Dhamtari — Chhattisgarh
-Durg — Chhattisgarh
-Gariyaband — Chhattisgarh
-Gaurela-Pendra-Marwahi — Chhattisgarh
-Janjgir - Champa — Chhattisgarh
-Jashpur — Chhattisgarh
-Kabirdham — Chhattisgarh
-Kondagaon — Chhattisgarh
-Korba — Chhattisgarh
-Korea — Chhattisgarh
-Mahasamund — Chhattisgarh
-Mungeli — Chhattisgarh
-Narainpur — Chhattisgarh
-Raigarh — Chhattisgarh
-Raipur — Chhattisgarh
-Raj Nandgaon — Chhattisgarh
-Sukma — Chhattisgarh
-Surajpur — Chhattisgarh
-Surguja — Chhattisgarh
-Uttar Bastar Kanker — Chhattisgarh
-Dadra & Nagar Haveli — Dadra and Nagar Haveli and Daman and Diu
-Daman — Dadra and Nagar Haveli and Daman and Diu
-Diu — Dadra and Nagar Haveli and Daman and Diu
-Central — Delhi
+Dakshin Bastar Dantewada
+Dhamtari
+Durg
+Gariyaband
+Gaurela-Pendra-Marwahi
+Janjgir - Champa
+Jashpur
+Kabirdham
+Kondagaon
+Korba
+Korea
+Mahasamund
+Mungeli
+Narainpur
+Raigarh
+Raipur
+Raj Nandgaon
+Sukma
+Surajpur
+Surguja
+Uttar Bastar Kanker
+Dadra & Nagar Haveli
+Daman
+Diu
+Central
 East — Delhi
-New Delhi — Delhi
+New Delhi
 North — Delhi
-North East — Delhi
-North West — Delhi
-Shahadra — Delhi
+North East
+North West
+Shahadra
 South — Delhi
-South East — Delhi
-South West — Delhi
+South East
+South West
 West — Delhi
-North Goa — Goa
-South Goa — Goa
-Ahmadabad — Gujarat
-Amreli — Gujarat
-Anand — Gujarat
-Aravalli — Gujarat
-Banas Kantha — Gujarat
-Bharuch — Gujarat
-Bhavnagar — Gujarat
-Botad — Gujarat
-Chhota Udepur — Gujarat
-Dahod — Gujarat
-Dangs — Gujarat
-Devbhumi Dwarka — Gujarat
-Gandhinagar — Gujarat
-Gir Somnath — Gujarat
-Jamnagar — Gujarat
-Junagadh — Gujarat
-Kachchh — Gujarat
-Kheda — Gujarat
-Mahesana — Gujarat
-Mahisagar — Gujarat
-Morbi — Gujarat
-Narmada — Gujarat
-Navsari — Gujarat
-Panch Mahals — Gujarat
-Patan — Gujarat
-Porbandar — Gujarat
-Rajkot — Gujarat
-Sabar Kantha — Gujarat
-Surat — Gujarat
-Surendranagar — Gujarat
-Tapi — Gujarat
-Vadodara — Gujarat
-Valsad — Gujarat
-Ambala — Haryana
-Bhiwani — Haryana
-Charkhi Dadri — Haryana
-Faridabad — Haryana
-Fatehabad — Haryana
-Gurugram — Haryana
-Hisar — Haryana
-Jhajjar — Haryana
-Jind — Haryana
-Kaithal — Haryana
-Karnal — Haryana
-Kurukshetra — Haryana
-Mahendragarh — Haryana
-Mewat — Haryana
-Palwal — Haryana
-Panchkula — Haryana
-Panipat — Haryana
-Rewari — Haryana
-Rohtak — Haryana
-Sirsa — Haryana
-Sonipat — Haryana
-Yamunanagar — Haryana
+North Goa
+South Goa
+Ahmadabad
+Amreli
+Anand
+Aravalli
+Banas Kantha
+Bharuch
+Bhavnagar
+Botad
+Chhota Udepur
+Dahod
+Dangs
+Devbhumi Dwarka
+Gandhinagar
+Gir Somnath
+Jamnagar
+Junagadh
+Kachchh
+Kheda
+Mahesana
+Mahisagar
+Morbi
+Narmada
+Navsari
+Panch Mahals
+Patan
+Porbandar
+Rajkot
+Sabar Kantha
+Surat
+Surendranagar
+Tapi
+Vadodara
+Valsad
+Ambala
+Bhiwani
+Charkhi Dadri
+Faridabad
+Fatehabad
+Gurugram
+Hisar
+Jhajjar
+Jind
+Kaithal
+Karnal
+Kurukshetra
+Mahendragarh
+Mewat
+Palwal
+Panchkula
+Panipat
+Rewari
+Rohtak
+Sirsa
+Sonipat
+Yamunanagar
 Bilaspur — Himachal Pradesh
-Chamba — Himachal Pradesh
+Chamba
 Hamirpur — Himachal Pradesh
-Kangra — Himachal Pradesh
-Kinnaur — Himachal Pradesh
-Kullu — Himachal Pradesh
-Lahul & Spiti — Himachal Pradesh
-Mandi — Himachal Pradesh
-Shimla — Himachal Pradesh
-Sirmaur — Himachal Pradesh
-Solan — Himachal Pradesh
-Una — Himachal Pradesh
-Anantnag — Jammu and Kashmir
-Badgam — Jammu and Kashmir
-Bandipura — Jammu and Kashmir
-Baramula — Jammu and Kashmir
-Doda — Jammu and Kashmir
-Ganderbal — Jammu and Kashmir
-Jammu — Jammu and Kashmir
-Kathua — Jammu and Kashmir
-Kishtwar — Jammu and Kashmir
-Kulgam — Jammu and Kashmir
-Kupwara — Jammu and Kashmir
-Pulwama — Jammu and Kashmir
-Punch — Jammu and Kashmir
-Rajauri — Jammu and Kashmir
-Ramban — Jammu and Kashmir
-Riasi — Jammu and Kashmir
-Samba — Jammu and Kashmir
-Shupiyan — Jammu and Kashmir
-Srinagar — Jammu and Kashmir
-Udhampur — Jammu and Kashmir
-Bokaro — Jharkhand
-Chatra — Jharkhand
-Deoghar — Jharkhand
-Dhanbad — Jharkhand
-Dumka — Jharkhand
-East Singhbhum — Jharkhand
-Garhwa — Jharkhand
-Giridih — Jharkhand
-Godda — Jharkhand
-Gumla — Jharkhand
-Hazaribagh — Jharkhand
-Jamtara — Jharkhand
-Khunti — Jharkhand
-Kodarma — Jharkhand
-Latehar — Jharkhand
-Lohardaga — Jharkhand
-Pakur — Jharkhand
-Palamu — Jharkhand
-Ramgarh — Jharkhand
-Ranchi — Jharkhand
-Sahibganj — Jharkhand
-Saraikela-Kharsawan — Jharkhand
-Simdega — Jharkhand
-West Singhbhum — Jharkhand
-Bagalkot — Karnataka
-Ballari — Karnataka
-Belagavi — Karnataka
-Bengaluru Rural — Karnataka
-Bengaluru Urban — Karnataka
-Bidar — Karnataka
-Chamarajanagar — Karnataka
-Chik Ballapur — Karnataka
-Chikkamagaluru — Karnataka
-Chitradurga — Karnataka
-Dakshina Kannada — Karnataka
-Davangere — Karnataka
-Dharwad — Karnataka
-Gadag — Karnataka
-Hassan — Karnataka
-Haveri — Karnataka
-Kalaburagi — Karnataka
-Kodagu — Karnataka
-Kolar — Karnataka
-Koppal — Karnataka
-Mandya — Karnataka
-Mysuru — Karnataka
-Raichur — Karnataka
-Ramanagaram — Karnataka
-Shivamogga — Karnataka
-Tumakuru — Karnataka
-Udupi — Karnataka
-Uttara Kannada — Karnataka
-Vijayapura — Karnataka
-Yadgir — Karnataka
-Alappuzha — Kerala
-Ernakulam — Kerala
-Idukki — Kerala
-Kannur — Kerala
-Kasaragod — Kerala
-Kollam — Kerala
-Kottayam — Kerala
-Kozhikode — Kerala
-Malappuram — Kerala
-Palakkad — Kerala
-Pattanamthitta — Kerala
-Thiruvananthapuram — Kerala
-Trissur — Kerala
-Wayanad — Kerala
-Kargil — Ladakh
-Leh — Ladakh
-Lakshadweep — Lakshadweep
-Agar Malwa — Madhya Pradesh
-Alirajpur — Madhya Pradesh
-Anuppur — Madhya Pradesh
-Ashoknagar — Madhya Pradesh
-Balaghat — Madhya Pradesh
-Barwani — Madhya Pradesh
-Betul — Madhya Pradesh
-Bhind — Madhya Pradesh
-Bhopal — Madhya Pradesh
-Burhanpur — Madhya Pradesh
-Chhatarpur — Madhya Pradesh
-Chhindwara — Madhya Pradesh
-Damoh — Madhya Pradesh
-Datia — Madhya Pradesh
-Dewas — Madhya Pradesh
-Dhar — Madhya Pradesh
-Dindori — Madhya Pradesh
-East Nimar — Madhya Pradesh
-Guna — Madhya Pradesh
-Gwalior — Madhya Pradesh
-Harda — Madhya Pradesh
-Hoshangabad — Madhya Pradesh
-Indore — Madhya Pradesh
-Jabalpur — Madhya Pradesh
-Jhabua — Madhya Pradesh
-Katni — Madhya Pradesh
-Mandla — Madhya Pradesh
-Mandsaur — Madhya Pradesh
-Morena — Madhya Pradesh
-Narshimapura — Madhya Pradesh
-Nimach — Madhya Pradesh
-Nivari — Madhya Pradesh
-Panna — Madhya Pradesh
-Raisen — Madhya Pradesh
-Rajgarh — Madhya Pradesh
-Ratlam — Madhya Pradesh
-Rewa — Madhya Pradesh
-Sagar — Madhya Pradesh
-Satna — Madhya Pradesh
-Sehore — Madhya Pradesh
-Seoni — Madhya Pradesh
-Shahdol — Madhya Pradesh
-Shajapur — Madhya Pradesh
-Sheopur — Madhya Pradesh
-Shivpuri — Madhya Pradesh
-Sidhi — Madhya Pradesh
-Singrauli — Madhya Pradesh
-Tikamgarh — Madhya Pradesh
-Ujjain — Madhya Pradesh
-Umaria — Madhya Pradesh
-Vidisha — Madhya Pradesh
-West Nimar — Madhya Pradesh
-Ahamadnagar — Maharashtra
-Akola — Maharashtra
-Amaravati — Maharashtra
+Kangra
+Kinnaur
+Kullu
+Lahul & Spiti
+Mandi
+Shimla
+Sirmaur
+Solan
+Una
+Anantnag
+Badgam
+Bandipura
+Baramula
+Doda
+Ganderbal
+Jammu
+Kathua
+Kishtwar
+Kulgam
+Kupwara
+Pulwama
+Punch
+Rajauri
+Ramban
+Riasi
+Samba
+Shupiyan
+Srinagar
+Udhampur
+Bokaro
+Chatra
+Deoghar
+Dhanbad
+Dumka
+East Singhbhum
+Garhwa
+Giridih
+Godda
+Gumla
+Hazaribagh
+Jamtara
+Khunti
+Kodarma
+Latehar
+Lohardaga
+Pakur
+Palamu
+Ramgarh
+Ranchi
+Sahibganj
+Saraikela-Kharsawan
+Simdega
+West Singhbhum
+Bagalkot
+Ballari
+Belagavi
+Bengaluru Rural
+Bengaluru Urban
+Bidar
+Chamarajanagar
+Chik Ballapur
+Chikkamagaluru
+Chitradurga
+Dakshina Kannada
+Davangere
+Dharwad
+Gadag
+Hassan
+Haveri
+Kalaburagi
+Kodagu
+Kolar
+Koppal
+Mandya
+Mysuru
+Raichur
+Ramanagaram
+Shivamogga
+Tumakuru
+Udupi
+Uttara Kannada
+Vijayapura
+Yadgir
+Alappuzha
+Ernakulam
+Idukki
+Kannur
+Kasaragod
+Kollam
+Kottayam
+Kozhikode
+Malappuram
+Palakkad
+Pattanamthitta
+Thiruvananthapuram
+Trissur
+Wayanad
+Kargil
+Leh
+Lakshadweep
+Agar Malwa
+Alirajpur
+Anuppur
+Ashoknagar
+Balaghat
+Barwani
+Betul
+Bhind
+Bhopal
+Burhanpur
+Chhatarpur
+Chhindwara
+Damoh
+Datia
+Dewas
+Dhar
+Dindori
+East Nimar
+Guna
+Gwalior
+Harda
+Hoshangabad
+Indore
+Jabalpur
+Jhabua
+Katni
+Mandla
+Mandsaur
+Morena
+Narshimapura
+Nimach
+Nivari
+Panna
+Raisen
+Rajgarh
+Ratlam
+Rewa
+Sagar
+Satna
+Sehore
+Seoni
+Shahdol
+Shajapur
+Sheopur
+Shivpuri
+Sidhi
+Singrauli
+Tikamgarh
+Ujjain
+Umaria
+Vidisha
+West Nimar
+Ahamadnagar
+Akola
+Amaravati
 Aurangabad — Maharashtra
-Bhandara — Maharashtra
-Bid — Maharashtra
-Buldhana — Maharashtra
-Chandrapur — Maharashtra
-Dhule — Maharashtra
-Gadchiroli — Maharashtra
-Gondia — Maharashtra
-Hingoli — Maharashtra
-Jalgaon — Maharashtra
-Jalna — Maharashtra
-Kolhapur — Maharashtra
-Latur — Maharashtra
-Mumbai City — Maharashtra
-Nagpur — Maharashtra
-Nanded — Maharashtra
-Nandurbar — Maharashtra
-Nashik — Maharashtra
-Palghar — Maharashtra
-Parbhani — Maharashtra
-Pune — Maharashtra
-Ratnagiri — Maharashtra
-Raygad — Maharashtra
-Sangli — Maharashtra
-Satara — Maharashtra
-Sindhudurg — Maharashtra
-Solapur — Maharashtra
-Sub Urban Mumbai — Maharashtra
-Thane — Maharashtra
-Usmanabad — Maharashtra
-Wardha — Maharashtra
-Washim — Maharashtra
-Yavatmal — Maharashtra
-Bishnupur — Manipur
-Chandel — Manipur
-Churachandpur — Manipur
-Imphal East — Manipur
-Imphal West — Manipur
-Jiribam — Manipur
-Kakching — Manipur
-Kamjong — Manipur
-Kangpokpi — Manipur
-Nonei — Manipur
-Pherzawl — Manipur
-Senapati — Manipur
-Tamenglong — Manipur
-Tengnoupal — Manipur
-Thoubal — Manipur
-Ukhrul — Manipur
-East Garo Hills — Meghalaya
-East Jaintia Hills — Meghalaya
-East Khasi Hills — Meghalaya
-North Garo Hills — Meghalaya
-Ri-Bhoi — Meghalaya
-South Garo Hills — Meghalaya
-South West Garo Hills — Meghalaya
-South West Khasi Hills — Meghalaya
-West Garo Hills — Meghalaya
-West Jaintia Hills — Meghalaya
-West Khasi Hills — Meghalaya
-Aizawl — Mizoram
-Champhai — Mizoram
-Kolasib — Mizoram
-Lawngtlai — Mizoram
-Lunglei — Mizoram
-Mamit — Mizoram
-Saiha — Mizoram
-Serchhip — Mizoram
-Dimapur — Nagaland
-Kiphire — Nagaland
-Kohima — Nagaland
-Longleng — Nagaland
-Mokokchung — Nagaland
-Mon — Nagaland
-Paren — Nagaland
-Phek — Nagaland
-Tuensang — Nagaland
-Wokha — Nagaland
-Zunheboto — Nagaland
-Anugul — Odisha
-Balasore (Baleshwar) — Odisha
-Baragarh — Odisha
-Baudh (Bauda) — Odisha
-Bhadrak — Odisha
-Bolangir (Balangir) — Odisha
-Cuttack — Odisha
-Deogarh — Odisha
-Dhenkanal — Odisha
-Gajapati — Odisha
-Ganjam — Odisha
-Jagatsinghpur — Odisha
-Jajapur — Odisha
-Jharsuguda — Odisha
-Kalahandi — Odisha
-Kandhamal — Odisha
-Kendraparha — Odisha
-Keonjhar (Kendujhar) — Odisha
-Khordha — Odisha
-Koraput — Odisha
-Malkangiri — Odisha
-Mayurbhanj — Odisha
-Nabarangapur — Odisha
-Nayagarh — Odisha
-Nuaparha — Odisha
-Puri — Odisha
-Rayagarha — Odisha
-Sambalpur — Odisha
-Subarnapur — Odisha
-Sundargarh — Odisha
-Karaikal — Puducherry
-Mahe — Puducherry
-Puducherry — Puducherry
-Yanam — Puducherry
-Amritsar — Punjab
-Barnala — Punjab
-Bathinda — Punjab
-Faridkot — Punjab
-Fatehgarh Sahib — Punjab
-Fazilka — Punjab
-Firozpur — Punjab
-Gurdaspur — Punjab
-Hoshiarpur — Punjab
-Jalandhar — Punjab
-Kapurthala — Punjab
-Ludhiana — Punjab
-Mansa — Punjab
-Moga — Punjab
-Pathankot — Punjab
-Patiala — Punjab
-Rupnagar — Punjab
-Sangrur — Punjab
-Sas Nagar (Sahibzada Ajit Singh Nagar) — Punjab
-Shahid Bhagat Singh Nagar — Punjab
-Sri Muktsar Sahib — Punjab
-Tarn Taran — Punjab
-Ajmer — Rajasthan
-Alwar — Rajasthan
-Banswara — Rajasthan
-Baran — Rajasthan
-Barmer — Rajasthan
-Bharatpur — Rajasthan
-Bhilwara — Rajasthan
-Bikaner — Rajasthan
-Bundi — Rajasthan
-Chittaurgarh — Rajasthan
-Churu — Rajasthan
-Dausa — Rajasthan
-Dhaulpur — Rajasthan
-Dungarpur — Rajasthan
-Ganganagar — Rajasthan
-Hanumangarh — Rajasthan
-Jaipur — Rajasthan
-Jaisalmer — Rajasthan
-Jalor — Rajasthan
-Jhalawar — Rajasthan
-Jhunjhunun — Rajasthan
-Jodhpur — Rajasthan
-Karauli — Rajasthan
-Kota — Rajasthan
-Nagaur — Rajasthan
-Pali — Rajasthan
+Bhandara
+Bid
+Buldhana
+Chandrapur
+Dhule
+Gadchiroli
+Gondia
+Hingoli
+Jalgaon
+Jalna
+Kolhapur
+Latur
+Mumbai City
+Nagpur
+Nanded
+Nandurbar
+Nashik
+Palghar
+Parbhani
+Pune
+Ratnagiri
+Raygad
+Sangli
+Satara
+Sindhudurg
+Solapur
+Sub Urban Mumbai
+Thane
+Usmanabad
+Wardha
+Washim
+Yavatmal
+Bishnupur
+Chandel
+Churachandpur
+Imphal East
+Imphal West
+Jiribam
+Kakching
+Kamjong
+Kangpokpi
+Nonei
+Pherzawl
+Senapati
+Tamenglong
+Tengnoupal
+Thoubal
+Ukhrul
+East Garo Hills
+East Jaintia Hills
+East Khasi Hills
+North Garo Hills
+Ri-Bhoi
+South Garo Hills
+South West Garo Hills
+South West Khasi Hills
+West Garo Hills
+West Jaintia Hills
+West Khasi Hills
+Aizawl
+Champhai
+Kolasib
+Lawngtlai
+Lunglei
+Mamit
+Saiha
+Serchhip
+Dimapur
+Kiphire
+Kohima
+Longleng
+Mokokchung
+Mon
+Paren
+Phek
+Tuensang
+Wokha
+Zunheboto
+Anugul
+Balasore (Baleshwar)
+Baragarh
+Baudh (Bauda)
+Bhadrak
+Bolangir (Balangir)
+Cuttack
+Deogarh
+Dhenkanal
+Gajapati
+Ganjam
+Jagatsinghpur
+Jajapur
+Jharsuguda
+Kalahandi
+Kandhamal
+Kendraparha
+Keonjhar (Kendujhar)
+Khordha
+Koraput
+Malkangiri
+Mayurbhanj
+Nabarangapur
+Nayagarh
+Nuaparha
+Puri
+Rayagarha
+Sambalpur
+Subarnapur
+Sundargarh
+Karaikal
+Mahe
+Puducherry
+Yanam
+Amritsar
+Barnala
+Bathinda
+Faridkot
+Fatehgarh Sahib
+Fazilka
+Firozpur
+Gurdaspur
+Hoshiarpur
+Jalandhar
+Kapurthala
+Ludhiana
+Mansa
+Moga
+Pathankot
+Patiala
+Rupnagar
+Sangrur
+Sas Nagar (Sahibzada Ajit Singh Nagar)
+Shahid Bhagat Singh Nagar
+Sri Muktsar Sahib
+Tarn Taran
+Ajmer
+Alwar
+Banswara
+Baran
+Barmer
+Bharatpur
+Bhilwara
+Bikaner
+Bundi
+Chittaurgarh
+Churu
+Dausa
+Dhaulpur
+Dungarpur
+Ganganagar
+Hanumangarh
+Jaipur
+Jaisalmer
+Jalor
+Jhalawar
+Jhunjhunun
+Jodhpur
+Karauli
+Kota
+Nagaur
+Pali
 Pratapgarh — Rajasthan
-Raj Samand — Rajasthan
-Sawai Madhopur — Rajasthan
-Sikar — Rajasthan
-Sirohi — Rajasthan
-Tonk — Rajasthan
-Udaipur — Rajasthan
+Raj Samand
+Sawai Madhopur
+Sikar
+Sirohi
+Tonk
+Udaipur
 East — Sikkim
 North — Sikkim
 South — Sikkim
 West — Sikkim
-Ariyalur — Tamil Nadu
-Chengalpattu — Tamil Nadu
-Chennai — Tamil Nadu
-Coimbatore — Tamil Nadu
-Cuddalore — Tamil Nadu
-Dharmapuri — Tamil Nadu
-Dindigul — Tamil Nadu
-Erode — Tamil Nadu
-Kallakkurichi — Tamil Nadu
-Kanchipuram — Tamil Nadu
-Kanyakumari — Tamil Nadu
-Karur — Tamil Nadu
-Krishnagiri — Tamil Nadu
-Madurai — Tamil Nadu
-Nagapattinam — Tamil Nadu
-Namakkal — Tamil Nadu
-Nilgiris — Tamil Nadu
-Perambalur — Tamil Nadu
-Pudukkottai — Tamil Nadu
-Ramanathapuram — Tamil Nadu
-Ranippettai — Tamil Nadu
-Salem — Tamil Nadu
-Sivaganga — Tamil Nadu
-Teni — Tamil Nadu
-Tenkasi — Tamil Nadu
-Thanjavur — Tamil Nadu
-Thiruvarur — Tamil Nadu
-Tiruchirapalli — Tamil Nadu
-Tirunelveli — Tamil Nadu
-Tiruppattur — Tamil Nadu
-Tiruppur — Tamil Nadu
-Tiruvallur — Tamil Nadu
-Tiruvannamalai — Tamil Nadu
-Tuticorin — Tamil Nadu
-Vellore — Tamil Nadu
-Villupuram — Tamil Nadu
-Virudhunagar — Tamil Nadu
-Adilabad — Telangana
-Bhadradri Kothagudem — Telangana
-Hyderabad — Telangana
-Jagtial — Telangana
-Jangaon — Telangana
-Jayashankar Bhupalapally — Telangana
-Jogulamba Gadwal — Telangana
-Kamareddy — Telangana
-Karimnagar — Telangana
-Khammam — Telangana
-Kumuram Bheem — Telangana
-Mahabubabad — Telangana
-Mahabubnagar — Telangana
-Mancherial — Telangana
-Medak — Telangana
-Medchal-Malkajgiri — Telangana
-Mulugu — Telangana
-Nagarkurnool — Telangana
-Nalgonda — Telangana
-Narayanpet — Telangana
-Nirmal — Telangana
-Nizamabad — Telangana
-Peddapalli — Telangana
-Rangareddy — Telangana
-Ranjanna Sircilla — Telangana
-Sangareddy — Telangana
-Siddipet — Telangana
-Suryapet — Telangana
-Vikarabad — Telangana
-Wanaparthy — Telangana
-Warangal (Rural) — Telangana
-Warangal (Urban) — Telangana
-Yadadri Bhuvanagiri — Telangana
-Dhalai — Tripura
-Gomati — Tripura
-Khowai — Tripura
-North Tripura — Tripura
-Sepahijala — Tripura
-South Tripura — Tripura
-Unokoti — Tripura
-West Tripura — Tripura
-Agra — Uttar Pradesh
-Aligarh — Uttar Pradesh
-Ambedkarnagar — Uttar Pradesh
-Amethi — Uttar Pradesh
-Amroha — Uttar Pradesh
-Auraiya — Uttar Pradesh
-Ayodhya — Uttar Pradesh
-Azamgarh — Uttar Pradesh
-Baghpat — Uttar Pradesh
-Bahraich — Uttar Pradesh
-Ballia — Uttar Pradesh
+Ariyalur
+Chengalpattu
+Chennai
+Coimbatore
+Cuddalore
+Dharmapuri
+Dindigul
+Erode
+Kallakkurichi
+Kanchipuram
+Kanyakumari
+Karur
+Krishnagiri
+Madurai
+Nagapattinam
+Namakkal
+Nilgiris
+Perambalur
+Pudukkottai
+Ramanathapuram
+Ranippettai
+Salem
+Sivaganga
+Teni
+Tenkasi
+Thanjavur
+Thiruvarur
+Tiruchirapalli
+Tirunelveli
+Tiruppattur
+Tiruppur
+Tiruvallur
+Tiruvannamalai
+Tuticorin
+Vellore
+Villupuram
+Virudhunagar
+Adilabad
+Bhadradri Kothagudem
+Hyderabad
+Jagtial
+Jangaon
+Jayashankar Bhupalapally
+Jogulamba Gadwal
+Kamareddy
+Karimnagar
+Khammam
+Kumuram Bheem
+Mahabubabad
+Mahabubnagar
+Mancherial
+Medak
+Medchal-Malkajgiri
+Mulugu
+Nagarkurnool
+Nalgonda
+Narayanpet
+Nirmal
+Nizamabad
+Peddapalli
+Rangareddy
+Ranjanna Sircilla
+Sangareddy
+Siddipet
+Suryapet
+Vikarabad
+Wanaparthy
+Warangal (Rural)
+Warangal (Urban)
+Yadadri Bhuvanagiri
+Dhalai
+Gomati
+Khowai
+North Tripura
+Sepahijala
+South Tripura
+Unokoti
+West Tripura
+Agra
+Aligarh
+Ambedkarnagar
+Amethi
+Amroha
+Auraiya
+Ayodhya
+Azamgarh
+Baghpat
+Bahraich
+Ballia
 Balrampur — Uttar Pradesh
-Banda — Uttar Pradesh
-Barabanki — Uttar Pradesh
-Bareilly — Uttar Pradesh
-Basti — Uttar Pradesh
-Bhadohi — Uttar Pradesh
-Bijnor — Uttar Pradesh
-Budaun — Uttar Pradesh
-Bulandshahr — Uttar Pradesh
-Chandauli — Uttar Pradesh
-Chitrakoot — Uttar Pradesh
-Deoria — Uttar Pradesh
-Etah — Uttar Pradesh
-Etawah — Uttar Pradesh
-Farrukhabad — Uttar Pradesh
-Fatehpur — Uttar Pradesh
-Firozabad — Uttar Pradesh
-Gautambudhnagar — Uttar Pradesh
-Gazipur — Uttar Pradesh
-Ghaziabad — Uttar Pradesh
-Gonda — Uttar Pradesh
-Gorakhpur — Uttar Pradesh
+Banda
+Barabanki
+Bareilly
+Basti
+Bhadohi
+Bijnor
+Budaun
+Bulandshahr
+Chandauli
+Chitrakoot
+Deoria
+Etah
+Etawah
+Farrukhabad
+Fatehpur
+Firozabad
+Gautambudhnagar
+Gazipur
+Ghaziabad
+Gonda
+Gorakhpur
 Hamirpur — Uttar Pradesh
-Hapur — Uttar Pradesh
-Hardoi — Uttar Pradesh
-Hathras — Uttar Pradesh
-Jalaun — Uttar Pradesh
-Jaunpur — Uttar Pradesh
-Jhansi — Uttar Pradesh
-Kannauj — Uttar Pradesh
-Kanpur — Uttar Pradesh
-Kanpur Dehat — Uttar Pradesh
-Kasganj — Uttar Pradesh
-Kaushambi — Uttar Pradesh
-Kheri — Uttar Pradesh
-Kushinagar — Uttar Pradesh
-Lalitpur — Uttar Pradesh
-Lucknow — Uttar Pradesh
-Maharajganj — Uttar Pradesh
-Mahoba — Uttar Pradesh
-Mainpuri — Uttar Pradesh
-Mathura — Uttar Pradesh
-Mau — Uttar Pradesh
-Meerut — Uttar Pradesh
-Mirzapur — Uttar Pradesh
-Moradabad — Uttar Pradesh
-Muzaffarnagar — Uttar Pradesh
-Pilibhit — Uttar Pradesh
+Hapur
+Hardoi
+Hathras
+Jalaun
+Jaunpur
+Jhansi
+Kannauj
+Kanpur
+Kanpur Dehat
+Kasganj
+Kaushambi
+Kheri
+Kushinagar
+Lalitpur
+Lucknow
+Maharajganj
+Mahoba
+Mainpuri
+Mathura
+Mau
+Meerut
+Mirzapur
+Moradabad
+Muzaffarnagar
+Pilibhit
 Pratapgarh — Uttar Pradesh
-Prayagraj — Uttar Pradesh
-Raibeareli — Uttar Pradesh
-Rampur — Uttar Pradesh
-Saharanpur — Uttar Pradesh
-Sambhal — Uttar Pradesh
-Santkabirnagar — Uttar Pradesh
-Shahjahanpur — Uttar Pradesh
-Shamli — Uttar Pradesh
-Shrawasti — Uttar Pradesh
-Siddharthnagar — Uttar Pradesh
-Sitapur — Uttar Pradesh
-Sonbhadra — Uttar Pradesh
-Sultanpur — Uttar Pradesh
-Unnao — Uttar Pradesh
-Varanasi — Uttar Pradesh
-Almora — Uttarakhand
-Bageshwar — Uttarakhand
-Chamoli — Uttarakhand
-Champawat — Uttarakhand
-Dehradun — Uttarakhand
-Haridwar — Uttarakhand
-Nainital — Uttarakhand
-Pauri Garhwal — Uttarakhand
-Pithoragarh — Uttarakhand
-Rudraprayag — Uttarakhand
-Tehri Garhwal — Uttarakhand
-Udham Singh Nagar — Uttarakhand
-Uttarkashi — Uttarakhand
-Alipur Duar — West Bengal
-Bankura — West Bengal
-Birbhum — West Bengal
-Dakshin Dinajpur — West Bengal
-Darjiling — West Bengal
-Haora — West Bengal
-Hugli — West Bengal
-Jalpaiguri — West Bengal
-Jhargram — West Bengal
-Kalimpong — West Bengal
-Koch Bihar — West Bengal
-Kolkata — West Bengal
-Maldah — West Bengal
-Murshidabad — West Bengal
-Nadia — West Bengal
-North Twenty-Four Parganas — West Bengal
-Paschim Barddhaman — West Bengal
-Paschim Medinipur — West Bengal
-Purba Barddhaman — West Bengal
-Purba Medinipur — West Bengal
-Puruliya — West Bengal
-South Twenty-Four Parganas — West Bengal
-Uttar Dinajpur — West Bengal
+Prayagraj
+Raibeareli
+Rampur
+Saharanpur
+Sambhal
+Santkabirnagar
+Shahjahanpur
+Shamli
+Shrawasti
+Siddharthnagar
+Sitapur
+Sonbhadra
+Sultanpur
+Unnao
+Varanasi
+Almora
+Bageshwar
+Chamoli
+Champawat
+Dehradun
+Haridwar
+Nainital
+Pauri Garhwal
+Pithoragarh
+Rudraprayag
+Tehri Garhwal
+Udham Singh Nagar
+Uttarkashi
+Alipur Duar
+Bankura
+Birbhum
+Dakshin Dinajpur
+Darjiling
+Haora
+Hugli
+Jalpaiguri
+Jhargram
+Kalimpong
+Koch Bihar
+Kolkata
+Maldah
+Murshidabad
+Nadia
+North Twenty-Four Parganas
+Paschim Barddhaman
+Paschim Medinipur
+Purba Barddhaman
+Purba Medinipur
+Puruliya
+South Twenty-Four Parganas
+Uttar Dinajpur

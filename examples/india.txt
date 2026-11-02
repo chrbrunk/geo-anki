@@ -1,11 +1,11 @@
 # Ten districts across ten states/territories and three front scripts.
-Varanasi — Uttar Pradesh
-Jaipur — Rajasthan
-Pune — Maharashtra
-Kolkata — West Bengal
-Gomati — Tripura
-Amritsar — Punjab
-Visakhapatnam — Andhra Pradesh
-Kamrup Metro — Assam
-Leh — Ladakh
-South Andaman — Andaman and Nicobar Islands
+Varanasi
+Jaipur
+Pune
+Kolkata
+Gomati
+Amritsar
+Visakhapatnam
+Kamrup Metro
+Leh
+South Andaman
