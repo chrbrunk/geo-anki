@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.3.0 (unreleased)
+## v0.3.0
 
 Adds support for India's districts.
 
@@ -9,7 +9,7 @@ Adds support for India's districts.
 - 731 historical district targets and a 10-card example deck.
 - Varanasi example, source and font notices, and GeoGuessr-focused documentation.
 
-## [v0.2.0](https://github.com/chrbrunk/geo-anki/releases/tag/v0.2.0)
+## v0.2.0
 
 Adds support for the Philippines, Bangladesh, Germany, and Japan.
 
@@ -18,7 +18,7 @@ Adds support for the Philippines, Bangladesh, Germany, and Japan.
 - Full target lists and 10-card example decks for all five countries.
 - Install from PyPI: `pip install geo-anki`.
 
-## [v0.1.0](https://github.com/chrbrunk/geo-anki/releases/tag/v0.1.0)
+## v0.1.0
 
 Generate map-based Anki flashcards for Indonesia’s kabupaten and kota.
 
