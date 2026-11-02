@@ -1,0 +1,11 @@
+# Ten districts across ten states/territories and three front scripts.
+Varanasi
+Jaipur
+Pune
+Kolkata
+Gomati
+Amritsar
+Visakhapatnam
+Kamrup Metro
+Leh
+South Andaman

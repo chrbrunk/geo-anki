@@ -15,16 +15,21 @@ boundary data. Choose the
 subdivisions you want to learn and export a deck with embedded maps. Cards show
 the country and subdivision on the front, and a highlighted map on the back.
 
-> [!IMPORTANT]
-> **The following countries and subdivisions are supported:**
->
-> - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
-> - **Philippines:** provinces.
-> - **Bangladesh:** districts.
-> - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
-> - **Japan:** prefectures.
->
-> More countries are planned.
+The primary goal is to help you learn geography for
+[GeoGuessr](https://www.geoguessr.com/), which guides the selection of countries
+and subdivisions supported below.
+
+### 🌐 Current country coverage
+
+- **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
+- **Philippines:** provinces.
+- **Bangladesh:** districts.
+- **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
+- **Japan:** prefectures.
+- **India:** districts.
+- **Romania:** județe (counties) and the municipality of Bucharest.
+
+More countries are planned.
 
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
@@ -95,6 +100,30 @@ Card fronts use Japanese prefecture names; map titles show Japanese and English.
 
 <img src="examples/images/hiroshima.png" alt="Map of Japan highlighting Hiroshima, with reference cities and a boxed Okinawa inset" width="450">
 
+### India
+
+**Front:** `India: वाराणसी`
+
+**Back:** `Varanasi — Uttar Pradesh`
+
+Varanasi is highlighted on a map of Uttar Pradesh, with reference cities marked.
+
+<img src="examples/images/varanasi.png" alt="Map of Uttar Pradesh highlighting Varanasi, with Devanagari and English titles and reference cities" width="450">
+
+District names on fronts use Devanagari in the Hindi-language states, Maharashtra,
+Goa and Sikkim; Bengali in West Bengal and Tripura; and English elsewhere.
+
+### Romania
+
+**Front:** `Romania: Bistrița-Năsăud`
+
+**Back:** `Bistrița-Năsăud`
+
+Bistrița-Năsăud is highlighted on a map of the whole country, with reference
+cities marked.
+
+<img src="examples/images/bistrita_nasaud.png" alt="Map of Romania highlighting Bistrița-Năsăud county with reference cities" width="450">
+
 ## 📦 Installation
 
 Requires Python 3.12+. Install the current release from PyPI:
@@ -138,6 +167,10 @@ Each supported country has a sample selection of 10 subdivisions in
   [generated deck](examples/outputs/germany.apkg)
 - **Japan:** [example input](examples/japan.txt) ·
   [generated deck](examples/outputs/japan.apkg)
+- **India:** [example input](examples/india.txt) ·
+  [generated deck](examples/outputs/india.apkg)
+- **Romania:** [example input](examples/romania.txt) ·
+  [generated deck](examples/outputs/romania.apkg)
 
 Copy or edit an example input to choose your own subdivisions.
 
@@ -149,14 +182,19 @@ with the exact dataset spellings to copy into your target file.**
 - **Bangladesh:** [district names](targets/bangladesh.txt)
 - **Germany:** [district names](targets/germany.txt)
 - **Japan:** [prefecture names](targets/japan.txt)
+- **India:** [district names](targets/india.txt)
+- **Romania:** [county and municipality names](targets/romania.txt)
 
-We recommend using an AI chatbot of your choice to filter a list from
-[targets/](targets/) into the subset you want, for example, "only Java kabupaten
-& kota". Save the resulting list as your `--targets` file.
+> [!TIP]
+> **Create a custom target list with an AI chatbot.** Ask it to filter a list from
+> [targets/](targets/), for example, "only Java kabupaten & kota", and save the
+> result as your `--targets` file.
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
 maps, and a JSON manifest. Run `geo_anki --help` for additional options.
+
+### Country-specific details
 
 For Bangladesh, target files accept either Bengali or English district names.
 
@@ -169,6 +207,16 @@ omitted. Map titles show both names.
 For Germany, a shared name such as `München` selects the Landkreis;
 `München (kreisfreie Stadt)` selects the separate city. Official five-digit
 district codes (AGS) are also accepted.
+
+For India, targets accept English or supported native district names, names
+qualified as `District — State`, or LGD district codes. Fronts use Devanagari in
+the Hindi-language states, Maharashtra, Goa and Sikkim; Bengali in West Bengal
+and Tripura; and English elsewhere. Backs show the English district and state
+or union territory, with a map of that state or territory.
+
+For Romania, targets accept Romanian names with or without diacritics, ISO county
+codes, and `Bucharest` for `București`. All 41 counties and Bucharest are supported;
+maps always show the whole country.
 
 ## 📍 Data sources
 
@@ -202,6 +250,17 @@ Japan prefecture boundaries come from MLIT National Land Numerical Information
 (MIT conversion; [MLIT source and terms](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)).
 Japanese text uses a renamed subset of Noto Sans CJK JP, bundled under the
 [SIL Open Font License 1.1](src/geo_anki/countries/japan/fonts/GeoAnkiJapanese-LICENSE.txt).
+
+India uses Survey of India boundaries from
+[ramSeraph / DataMeet's district collection](https://github.com/ramSeraph/indian_admin_boundaries/releases/tag/districts),
+released 2023-12-11: 731 districts in a historical snapshot, excluding later changes.
+Native names are curated; bundled Noto Sans Devanagari and Noto Sans Bengali fonts
+use SIL OFL 1.1. See [source notes](src/geo_anki/countries/india/SOURCES.md) for
+coverage and licensing details.
+
+Romania county boundaries come from [Natural Earth's public-domain 1:10m admin-1
+layer](https://github.com/nvkelso/natural-earth-vector/tree/ca96624a56bd078437bca8184e78163e5039ad19).
+Romanian names retain their diacritics; boundaries are generalized for display.
 
 ## 💻 Development
 
