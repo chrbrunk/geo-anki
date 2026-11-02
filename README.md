@@ -15,6 +15,10 @@ boundary data. Choose the
 subdivisions you want to learn and export a deck with embedded maps. Cards show
 the country and subdivision on the front, and a highlighted map on the back.
 
+The primary goal is to help you learn geography for
+[GeoGuessr](https://www.geoguessr.com/), which guides the selection of countries
+and subdivisions supported below.
+
 > [!IMPORTANT]
 > **The following countries and subdivisions are supported:**
 >
@@ -23,6 +27,7 @@ the country and subdivision on the front, and a highlighted map on the back.
 > - **Bangladesh:** districts.
 > - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
 > - **Japan:** prefectures.
+> - **India:** districts.
 >
 > More countries are planned.
 
@@ -95,6 +100,19 @@ Card fronts use Japanese prefecture names; map titles show Japanese and English.
 
 <img src="examples/images/hiroshima.png" alt="Map of Japan highlighting Hiroshima, with reference cities and a boxed Okinawa inset" width="450">
 
+### India
+
+**Front:** `India: वाराणसी`
+
+**Back:** `Varanasi — Uttar Pradesh`
+
+Varanasi is highlighted on a map of Uttar Pradesh, with reference cities marked.
+
+<img src="examples/images/varanasi.png" alt="Map of Uttar Pradesh highlighting Varanasi, with Devanagari and English titles and reference cities" width="450">
+
+District names on fronts use Devanagari in the Hindi-language states, Maharashtra,
+Goa and Sikkim; Bengali in West Bengal and Tripura; and English elsewhere.
+
 ## 📦 Installation
 
 Requires Python 3.12+. Install the current release from PyPI:
@@ -138,6 +156,8 @@ Each supported country has a sample selection of 10 subdivisions in
   [generated deck](examples/outputs/germany.apkg)
 - **Japan:** [example input](examples/japan.txt) ·
   [generated deck](examples/outputs/japan.apkg)
+- **India:** [example input](examples/india.txt) ·
+  [generated deck](examples/outputs/india.apkg)
 
 Copy or edit an example input to choose your own subdivisions.
 
@@ -149,6 +169,7 @@ with the exact dataset spellings to copy into your target file.**
 - **Bangladesh:** [district names](targets/bangladesh.txt)
 - **Germany:** [district names](targets/germany.txt)
 - **Japan:** [prefecture names](targets/japan.txt)
+- **India:** [district names](targets/india.txt)
 
 We recommend using an AI chatbot of your choice to filter a list from
 [targets/](targets/) into the subset you want, for example, "only Java kabupaten
@@ -169,6 +190,12 @@ omitted. Map titles show both names.
 For Germany, a shared name such as `München` selects the Landkreis;
 `München (kreisfreie Stadt)` selects the separate city. Official five-digit
 district codes (AGS) are also accepted.
+
+For India, targets accept English or supported native district names, names
+qualified as `District — State`, or LGD district codes. Fronts use Devanagari in
+the Hindi-language states, Maharashtra, Goa and Sikkim; Bengali in West Bengal
+and Tripura; and English elsewhere. Backs show the English district and state
+or union territory, with a map of that state or territory.
 
 ## 📍 Data sources
 
@@ -202,6 +229,13 @@ Japan prefecture boundaries come from MLIT National Land Numerical Information
 (MIT conversion; [MLIT source and terms](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-v2_3.html)).
 Japanese text uses a renamed subset of Noto Sans CJK JP, bundled under the
 [SIL Open Font License 1.1](src/geo_anki/countries/japan/fonts/GeoAnkiJapanese-LICENSE.txt).
+
+India uses Survey of India boundaries from
+[ramSeraph / DataMeet's district collection](https://github.com/ramSeraph/indian_admin_boundaries/releases/tag/districts),
+released 2023-12-11: 731 districts in a historical snapshot, excluding later changes.
+Native names are curated; bundled Noto Sans Devanagari and Noto Sans Bengali fonts
+use SIL OFL 1.1. See [source notes](src/geo_anki/countries/india/SOURCES.md) for
+coverage and licensing details.
 
 ## 💻 Development
 

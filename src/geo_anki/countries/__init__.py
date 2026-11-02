@@ -8,6 +8,8 @@ from geo_anki.countries.bangladesh.build import build_bangladesh
 from geo_anki.countries.bangladesh.data import download_data as download_bangladesh
 from geo_anki.countries.germany.build import build_germany
 from geo_anki.countries.germany.data import download_data as download_germany
+from geo_anki.countries.india.build import build_india
+from geo_anki.countries.india.data import download_data as download_india
 from geo_anki.countries.indonesia.build import build_indonesia
 from geo_anki.countries.indonesia.data import download_data as download_indonesia
 from geo_anki.countries.japan.build import build_japan
@@ -34,6 +36,7 @@ class Country:
 COUNTRIES = {
     "bangladesh": Country("Bangladesh", build_bangladesh, download_bangladesh),
     "germany": Country("Germany", build_germany, download_germany),
+    "india": Country("India", build_india, download_india),
     "indonesia": Country("Indonesia", build_indonesia, download_indonesia),
     "japan": Country("Japan", build_japan, download_japan),
     "philippines": Country("Philippines", build_philippines, download_philippines),

@@ -25,6 +25,7 @@ def write_deck(
     deck_name: str,
     *,
     font: Path | None = None,
+    fallback_fonts: tuple[Path, ...] = (),
     extra_media: tuple[Path, ...] = (),
 ) -> None:
     """Write map-backed notes and embedded images to an Anki package.
@@ -34,6 +35,7 @@ def write_deck(
         output: Destination .apkg path; parent directories are created as needed.
         deck_name: Display name used to derive the stable deck ID.
         font: Optional bundled font for card text, using a separate Anki model.
+        fallback_fonts: Additional bundled fonts for mixed-script card fronts.
         extra_media: Additional assets, such as the bundled font's license.
 
     Returns:
@@ -53,6 +55,16 @@ def write_deck(
                 "font-family: sans-serif", "font-family: 'Geo Anki Custom', sans-serif"
             )
         )
+    if fallback_fonts:
+        model_key += ":" + ":".join(path.name for path in fallback_fonts)
+        families = []
+        for index, path in enumerate(fallback_fonts):
+            family = f"Geo Anki Fallback {index}"
+            families.append(f"'{family}'")
+            css += (
+                f" @font-face {{ font-family: '{family}'; src: url('{path.name}'); }}"
+            )
+        css = css.replace(", sans-serif", ", " + ", ".join(families) + ", sans-serif")
     model = genanki.Model(
         stable_id(model_key),
         model_name,
@@ -82,6 +94,7 @@ def write_deck(
     package = genanki.Package(deck)
     package.media_files = [str(card[3]) for card in cards]
     package.media_files.extend(str(path) for path in extra_media)
+    package.media_files.extend(str(path) for path in fallback_fonts)
     if font is not None:
         package.media_files.append(str(font))
     output.parent.mkdir(parents=True, exist_ok=True)
