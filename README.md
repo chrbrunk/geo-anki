@@ -27,7 +27,7 @@ and subdivisions supported below.
 - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
 - **Japan:** prefectures.
 - **India:** districts.
-- **Romania:** counties (județe) and the municipality of Bucharest.
+- **Romania:** județe (counties) and the municipality of Bucharest.
 
 More countries are planned.
 
