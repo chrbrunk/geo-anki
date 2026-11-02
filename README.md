@@ -19,18 +19,17 @@ The primary goal is to help you learn geography for
 [GeoGuessr](https://www.geoguessr.com/), which guides the selection of countries
 and subdivisions supported below.
 
-> [!IMPORTANT]
-> **The following countries and subdivisions are supported:**
->
-> - **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
-> - **Philippines:** provinces.
-> - **Bangladesh:** districts.
-> - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
-> - **Japan:** prefectures.
-> - **India:** districts.
-> - **Romania:** counties (județe) and the municipality of Bucharest.
->
-> More countries are planned.
+### 🌐 Current country coverage
+
+- **Indonesia:** kabupaten (regencies) and kota (cities), below provinces.
+- **Philippines:** provinces.
+- **Bangladesh:** districts.
+- **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
+- **Japan:** prefectures.
+- **India:** districts.
+- **Romania:** counties (județe) and the municipality of Bucharest.
+
+More countries are planned.
 
 > [!NOTE]
 > 🤖 **Built with Codex.** This repository was coded with OpenAI Codex.
@@ -186,13 +185,16 @@ with the exact dataset spellings to copy into your target file.**
 - **India:** [district names](targets/india.txt)
 - **Romania:** [county and municipality names](targets/romania.txt)
 
-We recommend using an AI chatbot of your choice to filter a list from
-[targets/](targets/) into the subset you want, for example, "only Java kabupaten
-& kota". Save the resulting list as your `--targets` file.
+> [!TIP]
+> **Create a custom target list with an AI chatbot.** Ask it to filter a list from
+> [targets/](targets/), for example, "only Java kabupaten & kota", and save the
+> result as your `--targets` file.
 
 Boundary data downloads automatically and is cached locally. Unknown or ambiguous
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
 maps, and a JSON manifest. Run `geo_anki --help` for additional options.
+
+### Country-specific details (optional)
 
 For Bangladesh, target files accept either Bengali or English district names.
 
