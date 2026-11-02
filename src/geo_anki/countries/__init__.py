@@ -16,6 +16,8 @@ from geo_anki.countries.japan.build import build_japan
 from geo_anki.countries.japan.data import download_data as download_japan
 from geo_anki.countries.philippines.build import build_philippines
 from geo_anki.countries.philippines.data import download_data as download_philippines
+from geo_anki.countries.romania.build import build_romania
+from geo_anki.countries.romania.data import download_data as download_romania
 
 
 @dataclass(frozen=True)
@@ -40,4 +42,5 @@ COUNTRIES = {
     "indonesia": Country("Indonesia", build_indonesia, download_indonesia),
     "japan": Country("Japan", build_japan, download_japan),
     "philippines": Country("Philippines", build_philippines, download_philippines),
+    "romania": Country("Romania", build_romania, download_romania),
 }

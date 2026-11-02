@@ -2,12 +2,14 @@
 
 ## v0.3.0
 
-Adds support for India's districts.
+Adds support for India's districts and Romania's counties.
 
 - Devanagari and Bengali card fronts in selected states; English elsewhere.
 - State and union-territory maps with reference cities and English answers.
 - 731 historical district targets and a 10-card example deck.
 - Varanasi example, source and font notices, and GeoGuessr-focused documentation.
+- Romania's 41 counties and Bucharest, with whole-country maps and reference cities.
+- Full Romanian target list, 10-card example deck and Bistrița-Năsăud README example.
 
 ## v0.2.0
 

@@ -28,6 +28,7 @@ and subdivisions supported below.
 > - **Germany:** Landkreise (districts) and kreisfreie Städte (independent cities).
 > - **Japan:** prefectures.
 > - **India:** districts.
+> - **Romania:** counties (județe) and the municipality of Bucharest.
 >
 > More countries are planned.
 
@@ -113,6 +114,17 @@ Varanasi is highlighted on a map of Uttar Pradesh, with reference cities marked.
 District names on fronts use Devanagari in the Hindi-language states, Maharashtra,
 Goa and Sikkim; Bengali in West Bengal and Tripura; and English elsewhere.
 
+### Romania
+
+**Front:** `Romania: Bistrița-Năsăud`
+
+**Back:** `Bistrița-Năsăud`
+
+Bistrița-Năsăud is highlighted on a map of the whole country, with reference
+cities marked.
+
+<img src="examples/images/bistrita_nasaud.png" alt="Map of Romania highlighting Bistrița-Năsăud county with reference cities" width="450">
+
 ## 📦 Installation
 
 Requires Python 3.12+. Install the current release from PyPI:
@@ -158,6 +170,8 @@ Each supported country has a sample selection of 10 subdivisions in
   [generated deck](examples/outputs/japan.apkg)
 - **India:** [example input](examples/india.txt) ·
   [generated deck](examples/outputs/india.apkg)
+- **Romania:** [example input](examples/romania.txt) ·
+  [generated deck](examples/outputs/romania.apkg)
 
 Copy or edit an example input to choose your own subdivisions.
 
@@ -170,6 +184,7 @@ with the exact dataset spellings to copy into your target file.**
 - **Germany:** [district names](targets/germany.txt)
 - **Japan:** [prefecture names](targets/japan.txt)
 - **India:** [district names](targets/india.txt)
+- **Romania:** [county and municipality names](targets/romania.txt)
 
 We recommend using an AI chatbot of your choice to filter a list from
 [targets/](targets/) into the subset you want, for example, "only Java kabupaten
@@ -196,6 +211,10 @@ qualified as `District — State`, or LGD district codes. Fronts use Devanagari 
 the Hindi-language states, Maharashtra, Goa and Sikkim; Bengali in West Bengal
 and Tripura; and English elsewhere. Backs show the English district and state
 or union territory, with a map of that state or territory.
+
+For Romania, targets accept Romanian names with or without diacritics, ISO county
+codes, and `Bucharest` for `București`. All 41 counties and Bucharest are supported;
+maps always show the whole country.
 
 ## 📍 Data sources
 
@@ -236,6 +255,10 @@ released 2023-12-11: 731 districts in a historical snapshot, excluding later cha
 Native names are curated; bundled Noto Sans Devanagari and Noto Sans Bengali fonts
 use SIL OFL 1.1. See [source notes](src/geo_anki/countries/india/SOURCES.md) for
 coverage and licensing details.
+
+Romania county boundaries come from [Natural Earth's public-domain 1:10m admin-1
+layer](https://github.com/nvkelso/natural-earth-vector/tree/ca96624a56bd078437bca8184e78163e5039ad19).
+Romanian names retain their diacritics; boundaries are generalized for display.
 
 ## 💻 Development
 
