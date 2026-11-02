@@ -194,7 +194,7 @@ Boundary data downloads automatically and is cached locally. Unknown or ambiguou
 names raise an error. The command produces an `.apkg` to import into Anki, PNG
 maps, and a JSON manifest. Run `geo_anki --help` for additional options.
 
-### Country-specific details (optional)
+### Country-specific details
 
 For Bangladesh, target files accept either Bengali or English district names.
 
